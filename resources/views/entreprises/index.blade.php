@@ -6,12 +6,12 @@
 <body>
     <h1>Index des entreprises</h1>
 
-    <a href="{{ route('categories.create') }}" title="Ajouter une catégorie">Ajouter une catégorie</a>
+    <a href="{{ route('entreprises.create') }}" title="Ajouter une catégorie">Ajouter une catégorie</a>
 
     <ul>
         @foreach($entreprises as $entreprise)
         <li>
-            <a href="{{ route('categories.show', $category->id) }}" title="{{ $category->name }}">{{ $category->name }}</a>
+            <a href="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->name }}">{{ $entreprise->name }}</a>
         </li>
         @endforeach
     </ul>
