@@ -17,9 +17,21 @@ class EntreprisesController extends Controller
         return view('entreprises.create');
     }
 
+    public function store(Request $request)
+    {
+        $entreprises = new entreprises();
+        $entreprises->nom = $request->get('nom');
+        $entreprises->adresse = $request->get('adresse');
+        $entreprises->telephone = $request->get('telephone');
+        $entreprises->mail = $request->get('mail');
+        $entreprises->save();
+        return redirect()->route('entreprises.index');
+    }
+
+
     public function show($entrepriseId)
     {
-        $category = Category::where('id', $entrepriseId)->first();
+        $entreprises = entreprises::where('id', $entrepriseId)->first();
         return view('entreprises.show', compact('entreprises'));
     }
 }

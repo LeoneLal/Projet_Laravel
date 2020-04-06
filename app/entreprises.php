@@ -16,4 +16,6 @@ class entreprises extends Model
         'mail',
         'created_at'
     ];
+
+    public $timestamps = false;
 }

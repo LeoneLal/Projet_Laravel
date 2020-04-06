@@ -24,5 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/entreprises', 'EntreprisesController@index')->name('entreprises.index');
+Route::post('/entreprises/store', 'EntreprisesController@store')->name('entreprises.store');
 Route::get('/categories/create', 'EntreprisesController@create')->name('entreprises.create');
 Route::get('/entreprises/{id}/show', 'EntreprisesController@show')->name('entreprises.show');

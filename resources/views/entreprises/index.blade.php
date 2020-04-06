@@ -6,7 +6,7 @@
 <body>
     <h1>Index des entreprises</h1>
 
-    <a href="{{ route('entreprises.create') }}" title="Ajouter une catégorie">Ajouter une catégorie</a>
+    <a href="{{ route('entreprises.create') }}" title="Ajouter une catégorie">Ajouter une entreprise</a>
 
     <ul>
         @foreach($entreprises as $entreprise)

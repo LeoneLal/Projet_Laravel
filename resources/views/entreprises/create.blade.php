@@ -6,12 +6,22 @@
 <body>
     <h1>Création d'une entreprise</h1>
 
-    <form method="POST" action="{{ route('entreprise.store') }}">
+    <form method="POST" action="{{ route('entreprises.store') }}">
 
         @csrf
 
-        <label for="name">Nom de l'entreprise à créer</label>
-        <input id="name" type="text" name="name">
+        <label for="nom">Nom de l'entreprise à créer</label><br>
+        <input id="nom" type="text" name="nom">
+        <br><br>
+        <label for="adresse">Adresse de l'entreprise à créer</label><br>
+        <input id="adresse" type="text" name="adresse">
+        <br><br>
+        <label for="telephone">Téléphone de l'entreprise à créer</label><br>
+        <input id="telephone" type="text" name="telephone">
+        <br><br>
+        <label for="mail">Mail de l'entreprise à créer</label><br>
+        <input id="mail" type="text" name="mail">
+
 
         <input type="submit">
     </form>
