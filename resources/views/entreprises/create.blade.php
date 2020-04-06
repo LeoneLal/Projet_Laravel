@@ -10,7 +10,7 @@
 
         @csrf
 
-        <label for="name">Nom de l'entreprise a créer</label>
+        <label for="name">Nom de l'entreprise à créer</label>
         <input id="name" type="text" name="name">
 
         <input type="submit">
