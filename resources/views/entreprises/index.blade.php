@@ -11,7 +11,7 @@
     <ul>
         @foreach($entreprises as $entreprise)
         <li>
-            <a href="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->name }}">{{ $entreprise->name }}</a>
+            <a href="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->nom }}">{{ $entreprise->nom }}</a>
         </li>
         @endforeach
     </ul>

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\entreprises;
 
-class entreprises extends Controller
+class EntreprisesController extends Controller
 {
     public function index(){
-        $entreprise = entreprises::all();
+        $entreprises = entreprises::all();
         return view('entreprises.index', compact('entreprises'));
     }
 
