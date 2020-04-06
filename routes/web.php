@@ -23,6 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::get('/entreprises', 'EntrepriseController@index')->name('entreprises.index');
-Route::get('/categories/create', 'EntrepriseController@create')->name('entreprises.create');
-Route::get('/entreprises/{id}/show', 'EntrepriseController@show')->name('entreprises.show');
+Route::get('/entreprises', 'EntreprisesController@index')->name('entreprises.index');
+Route::get('/categories/create', 'EntreprisesController@create')->name('entreprises.create');
+Route::get('/entreprises/{id}/show', 'EntreprisesController@show')->name('entreprises.show');
