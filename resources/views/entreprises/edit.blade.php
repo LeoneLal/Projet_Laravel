@@ -6,29 +6,24 @@
 <body>
     <h1>Modification d'une entreprise</h1>
 
-    <form method="POST" action="{{ route('entreprises.store') }}">
+    <form method="POST" action="{{ route('entreprises.update', $entreprises->id) }}">
 
         @csrf
+        @method('PUT')
 
         <label for="nom">Nom de l'entreprise</label><br>
-        {{ $entreprises->nom }}
-        <input id="nom" type="text" name="nom">
+        <input id="nom" type="text" name="nom" value="{{$entreprises->nom}}">
         <br><br>
         <label for="adresse">Adresse de l'entreprise</label><br>
-        {{$entreprises->adresse}}
-        <input id="adresse" type="text" name="adresse">
+        <input id="adresse" type="text" name="adresse" value="{{$entreprises->adresse}}">
         <br><br>
         <label for="telephone">Téléphone de l'entreprise</label><br>
-        {{$entreprises->telephone}}
-        <input id="telephone" type="text" name="telephone">
+        <input id="telephone" type="text" name="telephone" value="{{$entreprises->telephone}}">
         <br><br>
         <label for="mail">Mail de l'entreprise</label><br>
-        {{$entreprises->mail}}
-        <input id="mail" type="text" name="mail">
-
-
+        <input id="mail" type="text" name="mail" value="{{$entreprises->mail}}">
+        <br><br>
         <input type="submit">
     </form>
-
 </body>
 </html>

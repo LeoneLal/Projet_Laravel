@@ -26,7 +26,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/entreprises', 'EntreprisesController@index')->name('entreprises.index');
 Route::post('/entreprises/store', 'EntreprisesController@store')->name('entreprises.store');
 Route::get('/entreprises/create', 'EntreprisesController@create')->name('entreprises.create');
-Route::get('/entreprises/update', 'EntreprisesController@update')->name('entreprises.update');
+Route::put('/entreprises/{id}/update', 'EntreprisesController@update')->name('entreprises.update');
+Route::get('/entreprises/{id}/edit', 'EntreprisesController@edit')->name('entreprises.edit');
 Route::get('/entreprises/{id}/show', 'EntreprisesController@show')->name('entreprises.show');
 
 Route::get('/contact', 'ContactController@index')->name('contact.index');

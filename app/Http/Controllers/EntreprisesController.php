@@ -19,14 +19,6 @@ class EntreprisesController extends Controller
         return view('entreprises.create');
     }
 
-    //Envoie la vue update entreprise
-    public function update()
-    {
-        $entreprises = entreprises::where('id', $entrepriseId)->first();
-        return view('entreprises.update');
-    }
-
-
     //Fonction envoie en BDD
     public function store(Request $request)
     {
@@ -36,6 +28,27 @@ class EntreprisesController extends Controller
         $entreprises->telephone = $request->get('telephone');
         $entreprises->mail = $request->get('mail');
         $entreprises->save();
+        return redirect()->route('entreprises.index');
+    }
+
+    //Envoie la vue edit entreprise
+    public function edit($entrepriseId)
+    {
+        $entreprises = entreprises::where('id', $entrepriseId)->first();
+        return view('entreprises.edit', compact('entreprises'));
+    }
+
+    //Fonction envoie en BDD
+    public function update(Request $request, $entrepriseId)
+    {
+        $entreprises = entreprises::where('id', $entrepriseId)->first();
+
+        $entreprises->nom = $request->get('nom');
+        $entreprises->adresse = $request->get('adresse');
+        $entreprises->telephone = $request->get('telephone');
+        $entreprises->mail = $request->get('mail');
+        $entreprises->save();
+
         return redirect()->route('entreprises.index');
     }
 
