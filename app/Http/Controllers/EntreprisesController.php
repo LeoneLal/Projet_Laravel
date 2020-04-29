@@ -23,7 +23,7 @@ class EntreprisesController extends Controller
     public function update($entrepriseId)
     {
         $entreprises = entreprises::where('id', $entrepriseId)->first();
-        return view('entreprises.update');
+        return view('entreprises.update', compact('entreprises'));
     }
 
 

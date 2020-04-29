@@ -22,7 +22,7 @@
 
     <br><br>
     
-    <a href="{{ route('entreprises.update') }}" title="Modification">Modifer les informations liées à l'entreprise</a>
+    <a href="{{ route('entreprises.update', $entreprises->id) }}" title="Modification">Modifer les informations liées à l'entreprise</a>
     <br>
     
     <a href="/" title="Supprimer l'entreprise">Supprimer l'entreprise</a>
