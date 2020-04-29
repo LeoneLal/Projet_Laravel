@@ -25,5 +25,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/entreprises', 'EntreprisesController@index')->name('entreprises.index');
 Route::post('/entreprises/store', 'EntreprisesController@store')->name('entreprises.store');
-Route::get('/categories/create', 'EntreprisesController@create')->name('entreprises.create');
+Route::get('/entreprises/create', 'EntreprisesController@create')->name('entreprises.create');
 Route::get('/entreprises/{id}/show', 'EntreprisesController@show')->name('entreprises.show');
+
+Route::get('/contact', 'ContactController@index')->name('contact.index');
+Route::post('/contact/store', 'ContactController@store')->name('contact.store');
+Route::get('/contact/create', 'ContactController@create')->name('contact.create');
+Route::get('/contact/{id}/show', 'ContactController@show')->name('contact.show');
