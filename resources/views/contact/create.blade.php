@@ -24,6 +24,7 @@
         <br><br>
         <label for="telephone">Téléphone du contact</label><br>
         <input id="numero" type="text" name="numero">
+        <input type="hidden" name="entreprise" value="{{ $entrepriseId }}">
         
 
         <input type="submit">

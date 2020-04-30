@@ -25,7 +25,7 @@
     <br><br>
     <a href="{{ route('entreprises.edit', $entreprises->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier l'entreprise</button></a>
     <a href="/" title="Supprimer l'entreprise"><button type="button" class="btn btn-danger">Supprimer l'entreprise</button></a>
-    <a href="{{ route('contact.create') }}" title="Ajouter un contact"><button type="button" class="btn btn-success">Ajouter un contact</button></a>
+    <a href="{{ route('contact.create', $entreprises->id) }}" title="Ajouter un contact"><button type="button" class="btn btn-success">Ajouter un contact</button></a>
     <hr>
     <br>
     <h2>Affichage des contacts</h2>

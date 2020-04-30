@@ -13,8 +13,8 @@ class ContactController extends Controller
         return view('contact.index', compact('contact'));
     }
 
-    public function create(){
-        return view('contact.create');
+    public function create($entrepriseId){
+        return view('contact.create', compact('entrepriseId'));
     }
 
     public function store(Request $request){
@@ -24,7 +24,7 @@ class ContactController extends Controller
         $contact->poste = $request->get('poste');
         $contact->mail = $request->get('mail');
         $contact->numero = $request->get('numero');
-        $contact->entreprise = 4;
+        $contact->entreprise = $request->get('entreprise');
         $contact->save();
         return redirect()->route('contact.index');
     }
@@ -39,11 +39,11 @@ class ContactController extends Controller
     {
         $contact = contact::where('id', $contactId)->first();
         $contact->nom = $request->get('nom');
-        $contact->nom = $request->get('prenom');
-        $contact->nom = $request->get('poste');
-        $contact->adresse = $request->get('mail');
-        $contact->telephone = $request->get('numero');
-        $contact->mail = 4;
+        $contact->prenom = $request->get('prenom');
+        $contact->poste = $request->get('poste');
+        $contact->mail = $request->get('mail');
+        $contact->numero = $request->get('numero');
+        $contact->entreprise = 4;
         $contact->save();
 
         return redirect()->route('contact.index');

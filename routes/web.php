@@ -32,7 +32,7 @@ Route::get('/entreprises/{id}/show', 'EntreprisesController@show')->name('entrep
 
 Route::get('/contact', 'ContactController@index')->name('contact.index');
 Route::post('/contact/store', 'ContactController@store')->name('contact.store');
-Route::get('/contact/create', 'ContactController@create')->name('contact.create');
+Route::get('/contact/{id}/create', 'ContactController@create')->name('contact.create');
 Route::put('/contact/{id}/update', 'ContactController@update')->name('contact.update');
 Route::get('/contact/{id}/edit', 'ContactController@edit')->name('contact.edit');
 Route::get('/contact/{id}/show', 'ContactController@show')->name('contact.show');
