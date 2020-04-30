@@ -8,14 +8,14 @@
 
     <a href="{{ route('entreprises.index') }}">Retour a l'accueil</a>
     <br>
-    @if(!is_null($entreprises))
-        {{ $entreprises->nom }}
+    @if(!is_null($entreprise))
+        {{ $entreprise->nom }}
         <br>
-        {{$entreprises->adresse}}
+        {{$entreprise->adresse}}
         <br>
-        {{$entreprises->telephone}}
+        {{$entreprise->telephone}}
         <br>
-        {{$entreprises->mail}}
+        {{$entreprise->mail}}
     @else
         <p>l'entreprise n'existe pas</p>
     @endif
@@ -24,8 +24,9 @@
     
     <a href="/" title="Modification">Modifer les informations liées à l'entreprise</a>
     <br>
-    
-    <a href="/" title="Supprimer l'entreprise">Supprimer l'entreprise</a>
+   
+    <a href="{{ route('entreprises.delete', $entreprise->id) }}" title="Supprimer l'entreprise">Supprimer l'entreprise</a>
+ 
     <br>
     <a href="{{ route('contact.create') }}" title="Ajouter un contact">Ajouter un contact</a>
     <br>
