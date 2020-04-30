@@ -28,4 +28,24 @@ class ContactController extends Controller
         $contact->save();
         return redirect()->route('contact.index');
     }
+
+    public function edit($contactId){
+        $contact = contact::where('id', $contactId)->first();
+        return view('contact.edit', compact('contact'));
+    }
+
+    //Fonction update BDD
+    public function update(Request $request, $contactId)
+    {
+        $contact = contact::where('id', $contactId)->first();
+        $contact->nom = $request->get('nom');
+        $contact->nom = $request->get('prenom');
+        $contact->nom = $request->get('poste');
+        $contact->adresse = $request->get('mail');
+        $contact->telephone = $request->get('numero');
+        $contact->mail = 4;
+        $contact->save();
+
+        return redirect()->route('contact.index');
+    }
 }
