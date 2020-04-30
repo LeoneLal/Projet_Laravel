@@ -47,7 +47,7 @@ class EntreprisesController extends Controller
     public function edit($entrepriseId)
     {
         $entreprise = Entreprise::where('id', $entrepriseId)->first();
-        return view('entreprises.edit', compact('entreprises'));
+        return view('entreprises.edit', compact('entreprise'));
     }
 
     //Fonction update BDD
