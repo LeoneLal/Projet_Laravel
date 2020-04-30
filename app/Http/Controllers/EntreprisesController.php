@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\entreprises;
+use App\contact;
 
 class EntreprisesController extends Controller
 {
@@ -38,11 +39,10 @@ class EntreprisesController extends Controller
         return view('entreprises.edit', compact('entreprises'));
     }
 
-    //Fonction envoie en BDD
+    //Fonction update BDD
     public function update(Request $request, $entrepriseId)
     {
         $entreprises = entreprises::where('id', $entrepriseId)->first();
-
         $entreprises->nom = $request->get('nom');
         $entreprises->adresse = $request->get('adresse');
         $entreprises->telephone = $request->get('telephone');
@@ -52,10 +52,11 @@ class EntreprisesController extends Controller
         return redirect()->route('entreprises.index');
     }
 
-    //Affichage des éléments 
+    //Affichage des éléments pour une entreprise
     public function show($entrepriseId)
     {
         $entreprises = entreprises::where('id', $entrepriseId)->first();
-        return view('entreprises.show', compact('entreprises'));
+        $contact= contact::all();
+        return view('entreprises.show', compact('entreprises'), compact('contact'));
     }
 }
