@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\contact;
-use App\entreprises;
+use App\Contact;
+use App\Entreprise;
 
 class ContactController extends Controller
 {
     public function index(){
-        $contact =  contact::all();
+        $contact =  Contact::all();
         return view('contact.index', compact('contact'));
     }
 
@@ -18,32 +18,31 @@ class ContactController extends Controller
     }
 
     public function store(Request $request){
-        $contact = new contact();
+        $contact = new Contact();
         $contact->nom = $request->get('nom');
         $contact->prenom = $request->get('prenom');
         $contact->poste = $request->get('poste');
         $contact->mail = $request->get('mail');
         $contact->numero = $request->get('numero');
-        $contact->entreprise = $request->get('entreprise');
+        $contact->entreprise_id = $request->get('entreprise_id');
         $contact->save();
         return redirect()->route('contact.index');
     }
 
     public function edit($contactId){
-        $contact = contact::where('id', $contactId)->first();
+        $contact = Contact::where('id', $contactId)->first();
         return view('contact.edit', compact('contact'));
     }
 
     //Fonction update BDD
     public function update(Request $request, $contactId)
     {
-        $contact = contact::where('id', $contactId)->first();
+        $contact = Contact::where('id', $contactId)->first();
         $contact->nom = $request->get('nom');
         $contact->prenom = $request->get('prenom');
         $contact->poste = $request->get('poste');
         $contact->mail = $request->get('mail');
         $contact->numero = $request->get('numero');
-        $contact->entreprise = 4;
         $contact->save();
 
         return redirect()->route('contact.index');

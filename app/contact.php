@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class contact extends Model
+class Contact extends Model
 {
     protected $table="contact";
 
@@ -15,8 +15,14 @@ class contact extends Model
         'poste', 
         'mail',
         'numero',
-        'entreprise',
+        'entreprise_id',
         'created_at'
     ];
     public $timestamps = false;
+
+    public function entreprise()
+    {
+        # BelongsTo doit prendre en premier paramètre le nom du model A, puis en second paramètre, le nom du champs dans le modèle courant lié avec le model A grâce à sa foreign key
+        return $this->belongsTo(entreprise::class, "entreprise_id");
+    }
 }

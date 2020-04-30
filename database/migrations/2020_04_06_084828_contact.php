@@ -20,8 +20,8 @@ class Contact extends Migration
             $table->string('poste');
             $table->string('mail');
             $table->string('numero');
-            $table->unsignedBigInteger('entreprise');
-            $table->foreign('entreprise')->references('id')->on('entreprises');
+            $table->unsignedBigInteger('entreprise_id');
+            $table->foreign('entreprise_id')->references('id')->on('entreprises');
             $table->timestamp('created_at')->useCurrent();
            
         });

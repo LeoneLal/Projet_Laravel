@@ -30,19 +30,16 @@
     <br>
     <h2>Affichage des contacts</h2>
     <p>Les contacts liés à l'entreprise apparaitrons ici !</p>
-    @foreach($contact as $one)
-    @if($one->entreprise == $entreprise->id)
-    <ul>
-        <li>{{ $one->nom }} {{ $one->prenom }}</li>
-        <li>{{ $one->poste }}</li>
-        <li>{{ $one->mail }}</li>
-        <li>{{ $one->numero }}</li>
-    </ul>
-    <a href="{{ route('entreprises.edit', $one->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier le contact</button></a>
-    <a href="/" title="Supprimer le contact"><button type="button" class="btn btn-danger">Supprimer le contact</button></a>
+
+    @if(!is_null($entreprise->contact))
+        <ul>
+            @foreach($entreprise->contact as $contact)
+                <li>
+                    {{ $contact->nom}}
+                </li>
+            @endforeach
+        </ul>
     @endif
-    @endforeach
-    <br><br>
 
 </body>
 </html>

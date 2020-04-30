@@ -6,6 +6,7 @@
 <body>
     <h1>Affichage des contacts</h1>
     <br>
+    <a href="{{ route('entreprises.index') }}">Retour a l'accueil</a>
     @foreach($contact as $one)
     <ul>
     <!--Il faut trouver comment afficher le nom de l'entreprise-->

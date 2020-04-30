@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\entreprises;
-use App\contact;
+use App\Entreprise;
+use App\Contact;
 
 class EntreprisesController extends Controller
 {
     //Envoie la page d'accueil en récupérant toutes les entreprises présentes en BDD
     public function index(){
-        $entreprises = entreprises::all();
+        $entreprises = Entreprise::all();
         return view('entreprises.index', compact('entreprises'));
     }
 
@@ -23,7 +23,7 @@ class EntreprisesController extends Controller
 
     public function delete($entrepriseId)
     {
-        $entreprise = entreprises::where('id', $entrepriseId)->first();
+        $entreprise = Entreprise::where('id', $entrepriseId)->first();
         // suppression, au choix !
         // $category->destroy();
         $entreprise->delete();
@@ -31,13 +31,10 @@ class EntreprisesController extends Controller
     }
 
 
-
-
-
     //Fonction envoie en BDD
     public function store(Request $request)
     {
-        $entreprise = new entreprises();
+        $entreprise = new Entreprise();
         $entreprise->nom = $request->get('nom');
         $entreprise->adresse = $request->get('adresse');
         $entreprise->telephone = $request->get('telephone');
@@ -49,19 +46,19 @@ class EntreprisesController extends Controller
     //Envoie la vue edit entreprise
     public function edit($entrepriseId)
     {
-        $entreprises = entreprises::where('id', $entrepriseId)->first();
+        $entreprise = Entreprise::where('id', $entrepriseId)->first();
         return view('entreprises.edit', compact('entreprises'));
     }
 
     //Fonction update BDD
     public function update(Request $request, $entrepriseId)
     {
-        $entreprises = entreprises::where('id', $entrepriseId)->first();
-        $entreprises->nom = $request->get('nom');
-        $entreprises->adresse = $request->get('adresse');
-        $entreprises->telephone = $request->get('telephone');
-        $entreprises->mail = $request->get('mail');
-        $entreprises->save();
+        $entreprise = Entreprise::where('id', $entrepriseId)->first();
+        $entreprise->nom = $request->get('nom');
+        $entreprise->adresse = $request->get('adresse');
+        $entreprise->telephone = $request->get('telephone');
+        $entreprise->mail = $request->get('mail');
+        $entreprise->save();
 
         return redirect()->route('entreprises.index');
     }
@@ -69,8 +66,7 @@ class EntreprisesController extends Controller
     //Affichage des éléments pour une entreprise
     public function show($entrepriseId)
     {
-        $entreprise = entreprises::where('id', $entrepriseId)->first();
-        $contact= contact::all();
-        return view('entreprises.show', compact('entreprise'), compact('contact'));
+        $entreprise = Entreprise::where('id', $entrepriseId)->with('contact')->first();
+        return view('entreprises.show', compact('entreprise'));
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class entreprises extends Model
+class Entreprise extends Model
 {
     protected $table="entreprises";
 
@@ -18,4 +18,10 @@ class entreprises extends Model
     ];
 
     public $timestamps = false;
+
+    public function contact()
+    {
+        # la relation inverse se déclare grace a la méthode "hasMany", qui ne prend cette fois en paramètre, que le nom du model "A"
+        return $this->hasMany(contact::class);
+    }
 }
