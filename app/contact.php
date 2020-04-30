@@ -18,4 +18,5 @@ class contact extends Model
         'entreprise',
         'created_at'
     ];
+    public $timestamps = false;
 }

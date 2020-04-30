@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\contact;
+use App\entreprises;
 
 class ContactController extends Controller
 {
@@ -19,9 +20,11 @@ class ContactController extends Controller
     public function store(Request $request){
         $contact = new contact();
         $contact->nom = $request->get('nom');
-        $contact->adresse = $request->get('poste');
+        $contact->prenom = $request->get('prenom');
+        $contact->poste = $request->get('poste');
         $contact->mail = $request->get('mail');
-        $contact->telephone = $request->get('telephone');
+        $contact->numero = $request->get('numero');
+        $contact->entreprise = 4;
         $contact->save();
         return redirect()->route('contact.index');
     }
