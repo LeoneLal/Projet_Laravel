@@ -23,15 +23,15 @@
     @endif
 
     <br><br>
-    <a href="{{ route('entreprises.edit', $entreprises->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier l'entreprise</button></a>
+    <a href="{{ route('entreprises.edit', $entreprise->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier l'entreprise</button></a>
     <a href="{{ route('entreprises.delete', $entreprise->id) }}" title="Supprimer l'entreprise"><button type="button" class="btn btn-danger">Supprimer l'entreprise</button></a>
-    <a href="{{ route('contact.create', $entreprises->id) }}" title="Ajouter un contact"><button type="button" class="btn btn-success">Ajouter un contact</button></a>
+    <a href="{{ route('contact.create', $entreprise->id) }}" title="Ajouter un contact"><button type="button" class="btn btn-success">Ajouter un contact</button></a>
     <hr>
     <br>
     <h2>Affichage des contacts</h2>
     <p>Les contacts liés à l'entreprise apparaitrons ici !</p>
     @foreach($contact as $one)
-    @if($one->entreprise == $entreprises->id)
+    @if($one->entreprise == $entreprise->id)
     <ul>
         <li>{{ $one->nom }} {{ $one->prenom }}</li>
         <li>{{ $one->poste }}</li>
