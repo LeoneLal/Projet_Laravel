@@ -29,5 +29,19 @@
     <br>
     <a href="{{ route('contact.create') }}" title="Ajouter un contact">Ajouter un contact</a>
     <br>
+    <h2>Affichage des contacts</h2>
+    <p>Les contacts liés à l'entreprise apparaitrons ici !</p>
+    @foreach($contact as $one)
+    @if($one->entreprise == $entreprises->id)
+    <ul>
+        <li>{{ $one->nom }} {{ $one->prenom }}</li>
+        <li>{{ $one->poste }}</li>
+        <li>{{ $one->mail }}</li>
+        <li>{{ $one->numero }}</li>
+    </ul>
+    @endif
+    @endforeach
+    <br><br>
+
 </body>
 </html>
