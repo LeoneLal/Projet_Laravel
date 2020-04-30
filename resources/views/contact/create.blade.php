@@ -13,6 +13,9 @@
         <label for="nom">Nom du contact</label><br>
         <input id="nom" type="text" name="nom">
         <br><br>
+        <label for="nom">Prénom du contact</label><br>
+        <input id="prenom" type="text" name="prenom">
+        <br><br>
         <label for="Poste">Poste du contact</label><br>
         <input id="Poste" type="text" name="poste">
         <br><br>
@@ -20,7 +23,8 @@
         <input id="mail" type="text" name="mail">
         <br><br>
         <label for="telephone">Téléphone du contact</label><br>
-        <input id="telephone" type="text" name="telephone">
+        <input id="numero" type="text" name="numero">
+        <input type="hidden" name="entreprise" value="{{ $entrepriseId }}">
         
 
         <input type="submit">
