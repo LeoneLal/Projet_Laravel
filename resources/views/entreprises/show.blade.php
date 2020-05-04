@@ -28,6 +28,7 @@
     <hr>
     <br>
     <h2>Affichage des contacts</h2>
+    <!-- Afficher les différents contact -->
     <p>Les contacts liés à l'entreprise apparaitrons ici !</p>
 
     @if(!is_null($entreprise->contact))
@@ -42,7 +43,7 @@
                 <li>E-mail : {{ $contact->mail}}</li> 
             </ul>
             <a href="{{ route('contact.edit', $contact->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier le contact</button></a>
-            <a href="/" title="Supprimer le contact"><button type="button" class="btn btn-danger">Supprimer le contact</button></a>
+            <a href="{{ route('contact.delete', $contact->id) }}" title="Supprimer le contact"><button type="button" class="btn btn-danger">Supprimer le contact</button></a>
     
         @endforeach
     @endif

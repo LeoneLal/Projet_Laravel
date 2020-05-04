@@ -37,6 +37,7 @@ Route::get('/contact/{id}/create', 'ContactController@create')->name('contact.cr
 Route::put('/contact/{id}/update', 'ContactController@update')->name('contact.update');
 Route::get('/contact/{id}/edit', 'ContactController@edit')->name('contact.edit');
 Route::get('/contact/{id}/show', 'ContactController@show')->name('contact.show');
+Route::get('contact/{id}/delete', 'ContactController@delete')->name('contact.delete');
 
 Route::get('/demandes', 'DemandesController@index')->name('demandes.index');
 Route::post('/demandes/store', 'DemandesController@store')->name('demandes.store');
@@ -45,3 +46,4 @@ Route::put('/demandes/{id}/update', 'DemandesController@update')->name('demandes
 Route::get('/demandes/{id}/edit', 'DemandesController@edit')->name('demandes.edit');
 Route::get('/demandes/{id}/show', 'DemandesController@show')->name('demandes.show');
 Route::get('/demandes/{id}/delete', 'DemandesController@delete')->name('demandes.delete');
+

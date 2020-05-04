@@ -20,12 +20,12 @@ class EntreprisesController extends Controller
         return view('entreprises.create');
     }
 
-
+    // Supprime une entreprise
     public function delete($entrepriseId)
     {
+        $contact = Contact::where('entreprise_id', $entrepriseId);
+        $contact->delete();
         $entreprise = Entreprise::where('id', $entrepriseId)->first();
-        // suppression, au choix !
-        // $category->destroy();
         $entreprise->delete();
         return redirect()->route('entreprises.index');
     }
@@ -39,6 +39,7 @@ class EntreprisesController extends Controller
         $entreprise->adresse = $request->get('adresse');
         $entreprise->telephone = $request->get('telephone');
         $entreprise->mail = $request->get('mail');
+        $entreprise->user_id = \Auth::user()->id;
         $entreprise->save();
         return redirect()->route('entreprises.index');
     }
@@ -58,6 +59,7 @@ class EntreprisesController extends Controller
         $entreprise->adresse = $request->get('adresse');
         $entreprise->telephone = $request->get('telephone');
         $entreprise->mail = $request->get('mail');
+        $entreprise->user_id = \Auth::user()->id;
         $entreprise->save();
 
         return redirect()->route('entreprises.index');
