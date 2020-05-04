@@ -36,7 +36,7 @@ class DemandesController extends Controller
         $demande = new Demande();
         $demande->envoi_mail = $request->get('envoi_mail');
         $demande->reception_mail = $request->get('reception_mail');
-        $demande->envoi_appel = $request->get('envoi_appel');
+        $demande->envoie_appel = $request->get('envoie_appel');
         $demande->reception_appel = $request->get('reception_appel');
         $demande->date_rendez_vous = $request->get('date_rendez_vous');
         $demande->resultat = $request->get('resultat');
