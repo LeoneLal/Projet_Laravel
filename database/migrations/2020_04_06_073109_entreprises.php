@@ -19,7 +19,10 @@ class Entreprises extends Migration
             $table->string('adresse');
             $table->string('telephone');
             $table->string('mail');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamp('created_at')->useCurrent();
+        
         });
     }
 

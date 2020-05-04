@@ -22,7 +22,11 @@ class Contact extends Migration
             $table->string('numero');
             $table->unsignedBigInteger('entreprise_id');
             $table->foreign('entreprise_id')->references('id')->on('entreprises');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamp('created_at')->useCurrent();
+         
+            
            
         });
     }

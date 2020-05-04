@@ -25,4 +25,10 @@ class Contact extends Model
         # BelongsTo doit prendre en premier paramètre le nom du model A, puis en second paramètre, le nom du champs dans le modèle courant lié avec le model A grâce à sa foreign key
         return $this->belongsTo(entreprise::class, "entreprise_id");
     }
+
+    public function contact_user()
+    {
+        # la relation inverse se déclare grace a la méthode "hasMany", qui ne prend cette fois en paramètre, que le nom du model "A"
+        return $this->hasMany(users::class);
+    }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Demandes extends Model
+class demandes extends Model
 {
     protected $table="demandes";
 
@@ -19,4 +19,11 @@ class Demandes extends Model
         'entreprise',
         'created_at'
     ];
+    public function demandes_user()
+    {
+        # la relation inverse se déclare grace a la méthode "hasMany", qui ne prend cette fois en paramètre, que le nom du model "A"
+        return $this->hasMany(users::class);
+    }
+    
+
 }
