@@ -52,7 +52,6 @@ class ContactController extends Controller
         $contact->numero = $request->get('numero');
         $contact->entreprise_id = $request->get('entreprise_id');
         $contact->save();
-
-        return redirect()->route('contact.index');
+        return redirect()->route('entreprises.show', $contact->entreprise_id);
     }
 }
