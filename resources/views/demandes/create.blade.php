@@ -53,7 +53,7 @@
         -->
 
         <label for="date_rendez_vous">Date d'un rendez-vous</label><br>
-        <input id="date_rendez_vous" type="text" name="date_rendez_vous">
+        <input id="date_rendez_vous" type="date" name="date_rendez_vous">
         <br><br>
         <label for="resultat">Résultat de la demande</label><br>
         <input id="resultat" type="text" name="resultat">
@@ -71,7 +71,7 @@
         <br><br>
 
         <!--
-            
+
         <label for="entreprise">Entreprise contactée</label><br>
         <input id="entreprise" type="text" name="entreprise">
         <br><br>
@@ -79,7 +79,7 @@
         -->
 
         <label for="created_at">Date de la demande à créer</label><br>
-        <input id="created_at" type="text" name="created_at">
+        <input id="created_at" type="date" name="created_at">
         <br><br>
 
         <input type="submit">
