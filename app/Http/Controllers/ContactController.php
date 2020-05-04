@@ -38,7 +38,7 @@ class ContactController extends Controller
         $contact = Contact::where('id', $contactId)->first();
         $contact->delete();  
         // $contact->entreprise_id->id)    compact('contact');            
-        return redirect()->route('entreprises.index') ;
+        return redirect()->route('entreprises.show', $contact->entreprise_id);
     }
 
     //Fonction update BDD
