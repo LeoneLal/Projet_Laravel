@@ -28,6 +28,7 @@ class ContactController extends Controller
         $contact->mail = $request->get('mail');
         $contact->numero = $request->get('numero');
         $contact->entreprise_id = $request->get('entreprise_id');
+        $contact->user_id = \Auth::user()->id;
         $contact->save();
         return redirect()->route('entreprises.show', $contact->entreprise_id);
     }
@@ -41,7 +42,6 @@ class ContactController extends Controller
     public function delete($contactId){
         $contact = Contact::where('id', $contactId)->first();
         $contact->delete();  
-        // $contact->entreprise_id->id)    compact('contact');            
         return redirect()->route('entreprises.show', $contact->entreprise_id);
     }
 
@@ -55,6 +55,7 @@ class ContactController extends Controller
         $contact->mail = $request->get('mail');
         $contact->numero = $request->get('numero');
         $contact->entreprise_id = $request->get('entreprise_id');
+        $contact->user_id = \Auth::user()->id;
         $contact->save(); 
         return redirect()->route('entreprises.show', $contact->entreprise_id);
     }

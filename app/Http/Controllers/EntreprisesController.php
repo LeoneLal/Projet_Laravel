@@ -39,6 +39,7 @@ class EntreprisesController extends Controller
         $entreprise->adresse = $request->get('adresse');
         $entreprise->telephone = $request->get('telephone');
         $entreprise->mail = $request->get('mail');
+        $entreprise->user_id = \Auth::user()->id;
         $entreprise->save();
         return redirect()->route('entreprises.index');
     }
@@ -58,6 +59,7 @@ class EntreprisesController extends Controller
         $entreprise->adresse = $request->get('adresse');
         $entreprise->telephone = $request->get('telephone');
         $entreprise->mail = $request->get('mail');
+        $entreprise->user_id = \Auth::user()->id;
         $entreprise->save();
 
         return redirect()->route('entreprises.index');

@@ -18,5 +18,6 @@
     </ul>
 
     <a href="{{ route('home') }}">Retour a l'accueil</a>
+    <p>"{{\Auth::user()}}"</p>
 </body>
 </html>
