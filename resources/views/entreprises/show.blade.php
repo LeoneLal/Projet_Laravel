@@ -11,7 +11,7 @@
     <br>
     <p>
     @if(!is_null($entreprise))
-        {{ $entreprise->nom }}
+        {{$entreprise->nom}}
         <br>
         {{$entreprise->adresse}}
         <br>
