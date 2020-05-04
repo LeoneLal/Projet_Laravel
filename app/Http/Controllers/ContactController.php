@@ -43,6 +43,7 @@ class ContactController extends Controller
         $contact->poste = $request->get('poste');
         $contact->mail = $request->get('mail');
         $contact->numero = $request->get('numero');
+        $contact->entreprise_id = $request->get('entreprise_id');
         $contact->save();
 
         return redirect()->route('contact.index');

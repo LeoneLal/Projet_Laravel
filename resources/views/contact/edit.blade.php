@@ -21,11 +21,13 @@
         <label for="poste">Poste du contact</label><br>
         <input id="poste" type="text" name="poste" value="{{$contact->poste}}">
         <br><br>
-        <label for="telephone">Téléphone du contact</label><br>
-        <input id="numero" type="text" name="numero" value="{{$contact->numero}}">
-        <br><br>
         <label for="mail">Mail du contact</label><br>
         <input id="mail" type="text" name="mail" value="{{$contact->mail}}">
+        <br><br>
+        <label for="telephone">Téléphone du contact</label><br>
+        <input id="numero" type="text" name="numero" value="{{$contact->numero}}">
+
+        <input id="entreprise_id" type="text" name="entreprise_id" value="{{$contact->entreprise_id}}">
         <br><br>
         <input type="submit">
     </form>
