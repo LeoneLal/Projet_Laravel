@@ -11,7 +11,7 @@
     <br>
     <p>
     @if(!is_null($entreprise))
-        {{ $entreprise->nom }}
+        {{$entreprise->nom}}
         <br>
         {{$entreprise->adresse}}
         <br>
@@ -42,7 +42,7 @@
                 <li>E-mail : {{ $contact->mail}}</li> 
             </ul>
             <a href="{{ route('contact.edit', $contact->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier le contact</button></a>
-            <a href="/" title="Supprimer l'entreprise"><button type="button" class="btn btn-danger">Supprimer l'entreprise</button></a>
+            <a href="/" title="Supprimer le contact"><button type="button" class="btn btn-danger">Supprimer le contact</button></a>
     
         @endforeach
     @endif
