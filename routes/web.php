@@ -37,3 +37,4 @@ Route::get('/contact/{id}/create', 'ContactController@create')->name('contact.cr
 Route::put('/contact/{id}/update', 'ContactController@update')->name('contact.update');
 Route::get('/contact/{id}/edit', 'ContactController@edit')->name('contact.edit');
 Route::get('/contact/{id}/show', 'ContactController@show')->name('contact.show');
+Route::get('contact/{id}/delete', 'ContactController@delete')->name('contact.delete');

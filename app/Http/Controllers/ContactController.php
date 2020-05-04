@@ -34,6 +34,13 @@ class ContactController extends Controller
         return view('contact.edit', compact('contact'));
     }
 
+    public function delete($contactId){
+        $contact = Contact::where('id', $contactId)->first();
+        $contact->delete();  
+        // $contact->entreprise_id->id)    compact('contact');            
+        return redirect()->route('entreprises.index') ;
+    }
+
     //Fonction update BDD
     public function update(Request $request, $contactId)
     {
