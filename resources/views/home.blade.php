@@ -18,7 +18,10 @@
 
                 </div>
             </div>
-            <img src="search.png" class="logo-slide" >
+            <p>
+    Voici une photo que j'ai prise lors de mes dernières vacances à la montagne :<br />
+    <img src="images/search.png" alt="Photo de montagne" />
+</p>
             <div class="col-md-5">
             <div class="row"><a href="{{ route('entreprises.index') }}" title="Ajouter une catégorie">Voir vos entreprises</a></div>
             <div class="row"><a href="{{ route('contact.index') }}" title="Ajouter une catégorie">Voir vos contacts</a></div>
