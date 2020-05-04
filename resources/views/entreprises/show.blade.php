@@ -28,6 +28,7 @@
     <hr>
     <br>
     <h2>Affichage des contacts</h2>
+    <!-- Afficher les différents contact -->
     <p>Les contacts liés à l'entreprise apparaitrons ici !</p>
 
     @if(!is_null($entreprise->contact))
