@@ -26,7 +26,7 @@ class ContactController extends Controller
         $contact->numero = $request->get('numero');
         $contact->entreprise_id = $request->get('entreprise_id');
         $contact->save();
-        return redirect()->route('contact.index');
+        return redirect()->route('entreprises.show', $contact->entreprise_id);
     }
 
     public function edit($contactId){
@@ -44,7 +44,7 @@ class ContactController extends Controller
         $contact->mail = $request->get('mail');
         $contact->numero = $request->get('numero');
         $contact->entreprise_id = $request->get('entreprise_id');
-        $contact->save();
+        $contact->save(); 
         return redirect()->route('entreprises.show', $contact->entreprise_id);
     }
 }
