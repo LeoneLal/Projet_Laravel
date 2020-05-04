@@ -27,7 +27,7 @@
         <label for="telephone">Téléphone du contact</label><br>
         <input id="numero" type="text" name="numero" value="{{$contact->numero}}">
 
-        <input id="entreprise_id" type="text" name="entreprise_id" value="{{$contact->entreprise_id}}">
+        <input id="entreprise_id" type="hidden" name="entreprise_id" value="{{$contact->entreprise_id}}">
         <br><br>
         <input type="submit">
     </form>
