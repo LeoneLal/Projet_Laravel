@@ -34,7 +34,7 @@ class DemandesController extends Controller
     public function store(Request $request)
     {
         $demande = new Demande();
-        $demande->envoi_mail = $request->get('envoi_mail');
+        $demande->envoie_mail = $request->get('envoie_mail');
         $demande->reception_mail = $request->get('reception_mail');
         $demande->envoi_appel = $request->get('envoi_appel');
         $demande->reception_appel = $request->get('reception_appel');

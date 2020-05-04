@@ -8,13 +8,15 @@
     <h1>Affichage des contacts</h1>
     <br>
     @foreach($contact as $one)
-    <ul>
-    <!--Il faut trouver comment afficher le nom de l'entreprise-->
-        <li>{{ $one->nom }} {{ $one->prenom }}</li>
-        <li>{{ $one->poste }}</li>
-        <li>{{ $one->mail }}</li>
-        <li>{{ $one->numero }}</li>
-    </ul>
+        @if($one->user_id == \Auth::user()->id)  
+            <ul>
+            <!--Il faut trouver comment afficher le nom de l'entreprise-->
+                <li>{{ $one->nom }} {{ $one->prenom }}</li>
+                <li>{{ $one->poste }}</li>
+                <li>{{ $one->mail }}</li>
+                <li>{{ $one->numero }}</li>
+            </ul>
+        @endif
     @endforeach
     <br><br>
     <a href="{{ route('home') }}" title="accueil">Retour à la page d'accueil</a>
