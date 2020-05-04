@@ -19,11 +19,13 @@
                 <a href="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->nom }}">{{ $entreprise->nom }}</a>
             </li>
             @endif
-        
+            
         @endforeach
     </ul>
+    
 
     <a href="{{ route('home') }}">Retour a l'accueil</a>
     <p>"{{\Auth::user()}}"</p>
+    
 </body>
 </html>

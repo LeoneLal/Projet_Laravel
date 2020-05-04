@@ -9,6 +9,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
         <!-- Styles -->
         <style>
             html, body {
@@ -83,7 +86,11 @@
                 <div class="title m-b-md">
                     AlterBiere
                 </div>
-            
+                <div class="images">
+                    <img src="images/search.png" alt="CV" id="CV"/>
+                    <img src="images/arrow.png" alt="fleche" id="fleche"/>
+                    <img src="images/amis.png" alt="Biere" id="Biere" />
+                </div>
             </div>
         </div>
     </body>

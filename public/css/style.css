@@ -1,0 +1,14 @@
+.images img {
+    width: 10%;
+    height: auto;
+}
+
+#first_step , #great{
+    width: 15%;
+    height: auto;
+}
+
+#third {
+    width: 25%;
+    height: auto;
+}
