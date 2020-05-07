@@ -33,8 +33,14 @@ class DemandesController extends Controller
     //Fonction envoie en BDD
     public function store(Request $request)
     {
+        dd(\Auth::user());
         $demande = new Demande();
-        $demande->envoi_mail = $request->get('envoi_mail');
+        //$demande->envoi_mail = $request->get('envoi_mail');
+        if(!is_null($request->get('envoi_mail'))) {
+            $demande->envoi_mail = True;
+        } else {
+            $demande->envoi_mail = False;
+        }
         $demande->reception_mail = $request->get('reception_mail');
         $demande->envoie_appel = $request->get('envoie_appel');
         $demande->reception_appel = $request->get('reception_appel');
@@ -42,6 +48,7 @@ class DemandesController extends Controller
         $demande->resultat = $request->get('resultat');
         $demande->entreprise = $request->get('entreprise');
         $demande->created_at = $request->get('created_at');
+        $demande->user_id = \Auth::user()->id;
         $demande->save();
         return redirect()->route('demandes.index');
     }

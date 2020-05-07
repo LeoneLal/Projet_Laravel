@@ -23,7 +23,7 @@ class Demandes extends Migration
             $table->string('resultat');
             $table->unsignedBigInteger('entreprise');
             $table->foreign('entreprise')->references('id')->on('entreprises');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamp('created_at')->useCurrent();
            

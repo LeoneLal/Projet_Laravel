@@ -12,28 +12,20 @@
         @csrf
 
         <p>Envoi d'un mail</p>
-        <input type="radio" id="yes" name="envoi_mail" value="yes">
-        <label for="yes">Oui</label><br>
-        <input type="radio" id="no" name="envoi_mail" value="no">
-        <label for="no">Non</label><br>
-
+        <input type="radio" name="envoi_mail" value="1">
+        
+        
         <p>Réception d'un mail</p>
-        <input type="radio" id="yes" name="reception_mail" value="yes">
-        <label for="yes">Oui</label><br>
-        <input type="radio" id="no" name="reception_mail" value="no">
-        <label for="no">Non</label><br>
+        <input type="radio" name="reception_mail">
+        
 
         <p>Appel sortant</p>
-        <input type="radio" id="yes" name="envoie_appel" value="yes">
-        <label for="yes">Oui</label><br>
-        <input type="radio" id="no" name="envoie_appel" value="no">
-        <label for="no">Non</label><br>
+        <input type="radio" name="envoie_appel">
+        
 
         <p>Appel entrant</p>
-        <input type="radio" id="yes" name="reception_appel" value="yes">
-        <label for="yes">Oui</label><br>
-        <input type="radio" id="no" name="reception_appel" value="no">
-        <label for="no">Non</label><br>
+        <input type="radio" name="reception_appel">
+        
 
         <!--
 

@@ -10,6 +10,7 @@ class Demande extends Model
 
     protected $fillable=[
         'id', 
+        'user_id',
         'envoi_mail', 
         'reception_mail', 
         'envoie_appel', 
