@@ -9,15 +9,23 @@
 
     <a href="{{ route('entreprises.create') }}" title="Ajouter une catégorie">Ajouter une entreprise</a>
 
+    
+
     <ul>
         @foreach($entreprises as $entreprise)
-        <li>
-            <a href="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->nom }}">{{ $entreprise->nom }}</a>
-        </li>
+        
+            @if($entreprise->user_id == \Auth::user()->id)
+            <li>
+                <a href="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->nom }}">{{ $entreprise->nom }}</a>
+            </li>
+            @endif
+            
         @endforeach
     </ul>
+    
 
     <a href="{{ route('home') }}">Retour a l'accueil</a>
     <p>"{{\Auth::user()}}"</p>
+    
 </body>
 </html>
