@@ -46,31 +46,31 @@
                 @endif 
 
                 @if ($nb_contact == 0)
-                    <p>Entre une entreprises pour obtenir ce badge</p>
-                @elseif($nb_contact < 5)
+                    <p>Entre un contact pour obtenir ce badge</p>
+                @elseif($nb_contact < 2)
                     <img src="images/level1.png" alt="Biere" id="first_step" />
                     <p><b>Badge : Bon début !</b></p>
-                    <p>Encore {{ 5 - $nb_contact}} entreprises avant le prochain badge</p>
+                    <p>Encore {{ 2 - $nb_contact}} contacts avant le prochain badge</p>
 
                 @elseif($nb_contact < 10)
                     <img src="images/level2.png" alt="Biere" id="great" />
                     <p><b>Badge : On progresse !</b></p>
-                    <p>Encore {{ 10 - $nb_contact}} entreprises avant le prochain badge</p>
+                    <p>Encore {{ 10 - $nb_contact}} contacts avant le prochain badge</p>
 
                 @elseif($nb_contact < 15)
                     <img src="images/level3.png" alt="Biere" id="third" />
                     <p><b>Badge : Ca devient serieux ! </b></p>
-                    <p>Encore {{ 15 - $nb_contact}} entreprises avant le prochain badge</p>
+                    <p>Encore {{ 15 - $nb_contact}} contacts avant le prochain badge</p>
 
                 @elseif($nb_contact < 20)
                     <img src="images/level4.png" alt="Biere" id="third" />
                     <p><b>Badge : Les yeux fermés !</b></p>
-                    <p>Encore {{ 15 - $nb_contact}} entreprises avant le prochain badge</p>
+                    <p>Encore {{ 15 - $nb_contact}} contacts avant le prochain badge</p>
 
                 @elseif($nb_contact < 25)
                     <img src="images/level5.png" alt="Biere" id="third" />
                     <p><b>Badge : Un vrai pro ! !</b></p>
-                    <p>Encore {{ 15 - $nb_contact}} entreprises avant le prochain badge</p>
+                    <p>Encore {{ 15 - $nb_contact}} contacts avant le prochain badge</p>
 
                 @endif 
             </div>
