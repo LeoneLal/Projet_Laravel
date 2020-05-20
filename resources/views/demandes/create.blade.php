@@ -12,19 +12,19 @@
         @csrf
 
         <p>Envoi d'un mail</p>
-        <input type="radio" name="envoi_mail" value="1">
+        <input type="checkbox" name="envoi_mail" value="1">
         
         
         <p>Réception d'un mail</p>
-        <input type="radio" name="reception_mail">
+        <input type="checkbox" name="reception_mail">
         
 
         <p>Appel sortant</p>
-        <input type="radio" name="envoie_appel">
+        <input type="checkbox" name="envoie_appel">
         
 
         <p>Appel entrant</p>
-        <input type="radio" name="reception_appel">
+        <input type="checkbox" name="reception_appel">
         
 
         <!--
@@ -54,6 +54,14 @@
         <p>Entreprise contactée</p>
         <input list="entreprise" type="text" name="entreprise">
         <datalist id="entreprise">
+            @foreach($entreprises as $entreprise)
+        
+            @if($entreprise->user_id == \Auth::user()->id)
+            <option value="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->nom }}">
+
+            @endif
+            
+            @endforeach
             <option value="Internet Explorer">
             <option value="Firefox">
             <option value="Chrome">

@@ -80,7 +80,7 @@
             <div class="col-md-5">
                 <div class="row"><a href="{{ route('entreprises.index') }}" title="Ajouter une catégorie">Voir vos entreprises</a></div>
                 <div class="row"><a href="{{ route('contact.index') }}" title="Ajouter une catégorie">Voir vos contacts</a></div>
-                
+                <div class="row"><a href="{{ route('demandes.index') }}" title="Ajouter une catégorie">Voir vos demandes</a></div>
             </div>
             
         </div>

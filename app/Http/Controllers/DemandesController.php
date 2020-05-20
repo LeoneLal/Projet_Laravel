@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Demande;
+use App\Entreprise;
 
 class DemandesController extends Controller
 {
@@ -33,7 +34,7 @@ class DemandesController extends Controller
     //Fonction envoie en BDD
     public function store(Request $request)
     {
-        dd(\Auth::user());
+        //dd(\Auth::user());
         $demande = new Demande();
         //$demande->envoi_mail = $request->get('envoi_mail');
         if(!is_null($request->get('envoi_mail'))) {
@@ -41,9 +42,24 @@ class DemandesController extends Controller
         } else {
             $demande->envoi_mail = False;
         }
-        $demande->reception_mail = $request->get('reception_mail');
-        $demande->envoie_appel = $request->get('envoie_appel');
-        $demande->reception_appel = $request->get('reception_appel');
+        //$demande->reception_mail = $request->get('reception_mail');
+        if(!is_null($request->get('reception_mail'))) {
+            $demande->reception_mail = True;
+        } else {
+            $demande->reception_mail = False;
+        }
+        //$demande->envoie_appel = $request->get('envoie_appel');
+        if(!is_null($request->get('envoie_appel'))) {
+            $demande->envoie_appel = True;
+        } else {
+            $demande->envoie_appel = False;
+        }
+        //$demande->reception_appel = $request->get('reception_appel');
+        if(!is_null($request->get('reception_appel'))) {
+            $demande->reception_appel = True;
+        } else {
+            $demande->reception_appel = False;
+        }
         $demande->date_rendez_vous = $request->get('date_rendez_vous');
         $demande->resultat = $request->get('resultat');
         $demande->entreprise = $request->get('entreprise');
@@ -79,7 +95,7 @@ class DemandesController extends Controller
     //Affichage des éléments pour une entreprise
     public function show($demandeId)
     {
-        $demande = Demande::where('id', $demandeId)->first();
+        $demande = Demande::where('id', $demandeId)->with('entreprises')->first();
         return view('demandes.show', compact('demande'));
     }
 }
