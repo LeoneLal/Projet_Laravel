@@ -8,17 +8,27 @@
     <h1>Affichage d'une catégorie</h1>
 
     <a href="{{ route('demandes.index') }}">Retour a l'accueil</a>
-    <br>
-    <p>
-    @if(!is_null($entreprise))
-        {{$demande->envoi_mail}}
-        <br>
-        {{$demande->reception_mail}}
-        <br>
-        {{$demande->envoie_appel}}
-        <br>
-        {{$demande->reception_appel}}
-        <br>
+    @if(!is_null($demande))
+        <div class="statut">
+            <h4>Statut mails </h4>
+            @if($demande->envoi_mail == 1 && $demande->reception_mail == 1)
+                <p>Communication par mail établie des deux côtés</p>
+            @elseif($demande->envoi_mail == 1)
+                <p>Mail envoyé, en attente de réponse...</p>
+            @endif
+        </div>
+        
+        <div class="statut">
+            <h4>Statut appel </h4>
+            @if($demande->envoie_appel == 1 && $demande->reception_appel == 1)
+                <p>Mise en contact téléphonique avec l'entreprise</p>
+            @elseif($demande->envoie_appel == 1)
+                <p>Entreprise appelée, en attente de réponse...</p>
+            @endif
+        </div>
+
+
+
         {{$demande->date_rendez_vous}}
         <br>
         {{$demande->resultat}}
@@ -28,8 +38,7 @@
         {{$demande->created_at}}
     @else
         <p>la demande n'existe pas</p>
-    @endif
-    </p>    
+    @endif  
     <a href="{{ route('demandes.edit', $demande->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier la demande</button></a>
     <a href="{{ route('demandes.delete', $demande->id) }}" title="Supprimer la demande"><button type="button" class="btn btn-danger">Supprimer la demande</button></a>
     
