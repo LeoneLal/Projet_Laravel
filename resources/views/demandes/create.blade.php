@@ -5,85 +5,101 @@
 	<title>Création d'une demande</title>
 </head>
 <body>
-    <h1>Création d'une demande</h1>
+<div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h1>Création d'une demande</h1>
+          <div class="form">
+            <form method="POST" action="{{ route('demandes.store') }}">
+              @csrf
+              <div class="form-group">
+                <label>Type d'emploi (ex : CDD)</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="type"
+                  placeholder="Ex : Alternance"
+                />
+              </div>
+              <div class="form-group">
+                <label>Emploi : </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="emploi"
+                  placeholder="Ex : Développeur full-stack"
+                />
+              </div>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="envoi_mail"
+                  value="1"
+                />
+                <label>Envoi d'un mail : </label>
+              </div>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="reception_mail"
+                />
+                <label>Réception d'un mail : </label>
+              </div>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="envoie_appel"
+                />
+                <label>Appel sortant : </label>
+              </div>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="reception_appel"
+                />
+                <label>Appel entrant : </label>
+              </div>
+              <div class="form-group">
+                <div class="form-group">
+                  <label for="date_rendez_vous">Date d'un rendez-vous : </label>
+                  <input
+                    id="date_rendez_vous"
+                    class="form-control"
+                    type="date"
+                    name="date_rendez_vous"
+                  />
+                  
+                </div>
+                <label for="resultat">Résultat de la demande : </label>
+                <input
+                  id="resultat"
+                  class="form-control"
+                  type="text"
+                  name="resultat"
+                />
+              </div>
+              <div class="form-group">
+                <label>Entreprise contactée</label>
+                <select class="form-control" name="entreprise">
+                  @foreach($entreprises as $entreprise)
+                  <option value="{{ $entreprise->id }}"
+                    >{{ $entreprise->nom }}</option
+                  >
+                  @endforeach
+                </select>
+              </div>
 
-    <form method="POST" action="{{ route('demandes.store') }}">
-
-        @csrf
-
-        <p>Envoi d'un mail</p>
-        <input type="checkbox" name="envoi_mail" value="1">
-        
-        
-        <p>Réception d'un mail</p>
-        <input type="checkbox" name="reception_mail">
-        
-
-        <p>Appel sortant</p>
-        <input type="checkbox" name="envoie_appel">
-        
-
-        <p>Appel entrant</p>
-        <input type="checkbox" name="reception_appel">
-        
-
-        <!--
-
-        <label for="envoi_mail">Envoi d'un mail</label><br>
-        <input id="envoi_mail" type="text" name="envoi_mail">
-        <br><br>
-        <label for="reception_mail">Date de réception d'un mail</label><br>
-        <input id="reception_mail" type="text" name="reception_mail">
-        <br><br>
-        <label for="envoie_appel">Date d'appel sortant</label><br>
-        <input id="envoie_appel" type="text" name="envoie_appel">
-        <br><br>
-        <label for="reception_appel">Date d'appel entrant</label><br>
-        <input id="reception_appel" type="text" name="reception_appel">
-        <br><br>
-
-        -->
-
-        <label for="date_rendez_vous">Date d'un rendez-vous</label><br>
-        <input id="date_rendez_vous" type="date" name="date_rendez_vous">
-        <br><br>
-        <label for="resultat">Résultat de la demande</label><br>
-        <input id="resultat" type="text" name="resultat">
-        <br><br>
-
-        <p>Entreprise contactée</p>
-        <input list="entreprise" type="text" name="entreprise">
-        <datalist id="entreprise">
-            @foreach($entreprises as $entreprise)
-        
-            @if($entreprise->user_id == \Auth::user()->id)
-            <option value="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->nom }}">
-
-            @endif
-            
-            @endforeach
-            <option value="Internet Explorer">
-            <option value="Firefox">
-            <option value="Chrome">
-            <option value="Opera">
-            <option value="Safari">
-        </datalist>
-        <br><br>
-
-        <!--
-
-        <label for="entreprise">Entreprise contactée</label><br>
-        <input id="entreprise" type="text" name="entreprise">
-        <br><br>
-
-        -->
-
-        <label for="created_at">Date de la demande à créer</label><br>
-        <input id="created_at" type="date" name="created_at">
-        <br><br>
-
-        <input type="submit">
-    </form>
-
+              <!--<label for="created_at">Date de la demande à créer</label>
+                <input id="created_at" type="date" name="created_at">-->
+              <input type="submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

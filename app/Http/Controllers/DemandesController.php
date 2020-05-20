@@ -18,7 +18,8 @@ class DemandesController extends Controller
     //Envoie la vue create entreprise
     public function create()
     {
-        return view('demandes.create');
+        $entreprises = Entreprise::all();
+        return view('demandes.create', compact('entreprises'));
     }
 
 
@@ -36,7 +37,9 @@ class DemandesController extends Controller
     {
         //dd(\Auth::user());
         $demande = new Demande();
-        //$demande->envoi_mail = $request->get('envoi_mail');
+        $demande->type = $request->get('type');
+        $demande->emploi = $request->get('emploi');
+        //dd($request);
         if(!is_null($request->get('envoi_mail'))) {
             $demande->envoi_mail = True;
         } else {
@@ -60,10 +63,12 @@ class DemandesController extends Controller
         } else {
             $demande->reception_appel = False;
         }
-        $demande->date_rendez_vous = $request->get('date_rendez_vous');
+        if(!is_null($request->get('date_rendez_vous'))) {
+            $demande->date_rendez_vous = $request->get('date_rendez_vous');
+        }
         $demande->resultat = $request->get('resultat');
         $demande->entreprise = $request->get('entreprise');
-        $demande->created_at = $request->get('created_at');
+        //$demande->created_at = $request->get('created_at');
         $demande->user_id = \Auth::user()->id;
         $demande->save();
         return redirect()->route('demandes.index');

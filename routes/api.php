@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('entreprises', 'ApiEntreprisesController@index')->name('api.entreprises.index');
+Route::post('entreprises/store', 'ApiEntreprisesController@store')->name('api.entreprises.store');
+  
+
+/*
+Route::middleware('apiauth')->group(function(){
+    Route::get('entreprises', 'ApiEntreprisesController@index')->name('api.entreprises.index');
+    Route::post('entreprises/store', 'ApiEntreprisesController@store')->name('api.entreprises.store');
+});
+*/
