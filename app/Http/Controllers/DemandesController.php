@@ -97,10 +97,10 @@ class DemandesController extends Controller
     }
 
 
-    //Affichage des éléments pour une entreprise
+    //Affichage des détails d'une demande
     public function show($demandeId)
     {
-        $demande = Demande::where('id', $demandeId)->with('entreprises')->first();
+        $demande = Demande::where('id', $demandeId)->first();
         return view('demandes.show', compact('demande'));
     }
 }
