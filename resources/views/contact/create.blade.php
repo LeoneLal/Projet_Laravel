@@ -11,24 +11,46 @@
 
         @csrf
 
-        <label for="nom">Nom du contact</label><br>
-        <input id="nom" type="text" name="nom">
-        <br><br>
-        <label for="nom">Prénom du contact</label><br>
-        <input id="prenom" type="text" name="prenom">
-        <br><br>
-        <label for="Poste">Poste du contact</label><br>
-        <input id="Poste" type="text" name="poste">
-        <br><br>
-        <label for="mail">Mail du contact</label><br>
-        <input id="mail" type="text" name="mail">
-        <br><br>
-        <label for="telephone">Téléphone du contact</label><br>
-        <input id="numero" type="text" name="numero">
+        <div class="container">
+            <label for="nom">Nom du contact</label><br>
+            <input id="nom" type="text" name="nom">
+            @error('nom')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="container">
+            <label for="nom">Prénom du contact</label><br>
+            <input id="prenom" type="text" name="prenom">
+            @error('prenom')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="container">
+            <label for="Poste">Poste du contact</label><br>
+            <input id="Poste" type="text" name="poste">
+            @error('poste')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="container">
+            <label for="mail">Mail du contact</label><br>
+            <input id="mail" type="text" name="mail">
+            @error('mail')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="container">
+            <label for="telephone">Téléphone du contact</label><br>
+            <input id="numero" type="text" name="numero">
+            @error('numero')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
         <input type="hidden" name="entreprise_id" value="{{ $entrepriseId }}">
-        
 
-        <input type="submit">
+        <div class="container">
+            <input type="submit">
+        </div>
     </form>
 
 </body>

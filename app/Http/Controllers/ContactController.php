@@ -21,6 +21,18 @@ class ContactController extends Controller
 
     //Fonction envoie en BDD d'un contact
     public function store(Request $request){
+
+        $validatedData = $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'poste' => 'required',
+            'mail' => 'required|email',
+            'numero' => 'required',
+        ]); 
+
+        $message = "Le champ numéro est incorrect.";
+
+
         $contact = new Contact();
         $contact->nom = $request->get('nom');
         $contact->prenom = $request->get('prenom');
@@ -48,6 +60,14 @@ class ContactController extends Controller
     //Fonction update BDD
     public function update(Request $request, $contactId)
     {
+        $validatedData = $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'poste' => 'date',
+            'mail' => 'required|email',
+            'numero' => 'required',
+        ]);
+
         $contact = Contact::where('id', $contactId)->first();
         $contact->nom = $request->get('nom');
         $contact->prenom = $request->get('prenom');
