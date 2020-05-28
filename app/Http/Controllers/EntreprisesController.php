@@ -34,7 +34,7 @@ class EntreprisesController extends Controller
     //Fonction envoie en BDD
     public function store(Request $request)
     {
-        // Vérifica
+        // Vérification du contenu
         $validatedData = $request->validate([
             'nom' => 'required',
             'adresse' => 'required',
