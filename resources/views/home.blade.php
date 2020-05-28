@@ -139,6 +139,7 @@
                     <a href="{{ route('entreprises.index') }}">Vos entreprises</a>
                     <a href="{{ route('contact.index') }}">Vos contacts</a>
                     <a href="{{ route('demandes.index') }}">Vos demandes</a>
+                    <a href="{{ route('api.entreprises.index') }}" title="Accéder à l'API">Accéder à l'API</a>
                 </div>
             </div>
         </div>

@@ -35,6 +35,16 @@ class DemandesController extends Controller
     //Fonction envoie en BDD
     public function store(Request $request)
     {
+
+        $validatedData = $request->validate([
+            'type' => 'required',
+            'emploi' => 'required',
+            'date_rendez_vous' => 'date',
+            'mail' => 'required|email',
+            'resultat' => 'required',
+            'entreprise' => 'required',
+        ]); 
+
         //dd(\Auth::user());
         $demande = new Demande();
         $demande->type = $request->get('type');
@@ -97,7 +107,7 @@ class DemandesController extends Controller
     }
 
 
-    //Affichage des éléments pour une entreprise
+    //Affichage des détails d'une demande
     public function show($demandeId)
     {
         $demande = Demande::where('id', $demandeId)->first();

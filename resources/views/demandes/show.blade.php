@@ -6,6 +6,34 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style>
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 100px;
+    }
+
+    .content h2{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom : 5px;
+    }
+
+    .statut {
+        display: flex;
+        flex-direction: column
+    }
+
+    .links{
+        display : flex;
+        flex-direction : column;
+        margin-left: 100px;
+    }
+
+    .links a{
+        margin: 1%;
+    }
+    </style>
 </head>
 <body>
     <h1>Affichage d'une catégorie</h1>

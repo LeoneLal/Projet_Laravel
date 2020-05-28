@@ -34,6 +34,14 @@ class EntreprisesController extends Controller
     //Fonction envoie en BDD
     public function store(Request $request)
     {
+        // Vérifica
+        $validatedData = $request->validate([
+            'nom' => 'required',
+            'adresse' => 'required',
+            'telephone' => 'required',
+            'mail' => 'required|email',
+        ]);       
+
         $entreprise = new Entreprise();
         $entreprise->nom = $request->get('nom');
         $entreprise->adresse = $request->get('adresse');
@@ -54,6 +62,14 @@ class EntreprisesController extends Controller
     //Fonction update BDD
     public function update(Request $request, $entrepriseId)
     {
+
+        $validatedData = $request->validate([
+            'nom' => 'required',
+            'adresse' => 'required',
+            'telephone' => 'required',
+            'mail' => 'required|email',
+        ]);
+
         $entreprise = Entreprise::where('id', $entrepriseId)->first();
         $entreprise->nom = $request->get('nom');
         $entreprise->adresse = $request->get('adresse');

@@ -25,14 +25,19 @@ class ApiEntreprisesController extends Controller
         $entreprise->telephone = $request->get('telephone');
         $entreprise->mail = $request->get('mail');
         $entreprise->user_id = $request->get('id');
-        $entreprise->save();
+
+        
         if ($entreprise->save()) {
             return response()->json([
-                'status' => 'OK'
+                'Etat'=>'Wesh ca marche frère'
             ]);
-        }
+            //return redirect()->route('entreprises.index');
+            }
         return response()->json([
-            'status' => 'KO'
+            'Etat'=> "Aie c'est la lose"
+
         ]);
+        
     }
+
 }

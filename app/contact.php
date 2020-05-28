@@ -29,6 +29,6 @@ class Contact extends Model
     public function contact_user()
     {
         # la relation inverse se déclare grace a la méthode "hasMany", qui ne prend cette fois en paramètre, que le nom du model "A"
-        return $this->hasMany(users::class);
+        return $this->belongsTo(users::class, "id");
     }
 }

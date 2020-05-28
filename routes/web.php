@@ -47,3 +47,5 @@ Route::get('/demandes/{id}/edit', 'DemandesController@edit')->name('demandes.edi
 Route::get('/demandes/{id}/show', 'DemandesController@show')->name('demandes.show');
 Route::get('/demandes/{id}/delete', 'DemandesController@delete')->name('demandes.delete');
 
+
+
