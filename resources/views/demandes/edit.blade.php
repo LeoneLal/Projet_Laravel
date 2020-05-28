@@ -33,6 +33,43 @@
                 value="{{$demande->emploi}}"
             />
         </div>
+        <div class="form-check">
+            <input
+                type="checkbox"
+                class="form-check-input"
+                name="envoi_mail"
+                value="{{$demande->envoi_mail}}"
+            />
+            <label>Envoi d'un mail : </label>
+        </div>
+        <div class="form-check">
+            <input
+                type="checkbox"
+                class="form-check-input"
+                name="reception_mail"
+                value="{{$demande->reception_mail}}"
+            />
+            <label>Réception d'un mail : </label>
+        </div>
+        <div class="form-check">
+            <input
+                type="checkbox"
+                class="form-check-input"
+                name="envoie_appel"
+                value="{{$demande->envoie_appel}}"
+            />
+            <label>Appel sortant : </label>
+        </div>
+        <div class="form-check">
+            <input
+                type="checkbox"
+                class="form-check-input"
+                name="reception_appel"
+                value="{{$demande->reception_appel}}"
+            />
+            <label>Appel entrant : </label>
+        </div>
+        <input type="submit">
     </form>
 </body>
 </html>

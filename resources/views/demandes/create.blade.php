@@ -95,7 +95,7 @@
 
               <!--<label for="created_at">Date de la demande à créer</label>
                 <input id="created_at" type="date" name="created_at">-->
-              <input type="submit" />
+              <a href="{{ route('demandes.index') }}"><input type="submit" /></a>
             </form>
           </div>
         </div>
