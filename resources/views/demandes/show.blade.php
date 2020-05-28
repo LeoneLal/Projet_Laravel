@@ -72,7 +72,7 @@
         <div class="statut">
             <h4>Statut rendez-vous :</h4>
             <p>{{$demande->resultat}}</p>
-            <p>{{$demande->id}}</p>
+            <p>ID : {{$demande->id}}</p>
         </div>
     @else
         <p>la demande n'existe pas</p>
