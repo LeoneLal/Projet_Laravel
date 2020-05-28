@@ -100,7 +100,7 @@ class DemandesController extends Controller
     //Affichage des éléments pour une entreprise
     public function show($demandeId)
     {
-        $demande = Demande::where('id', $demandeId)->with('entreprises')->first();
+        $demande = Demande::where('id', $demandeId)->first();
         return view('demandes.show', compact('demande'));
     }
 }
