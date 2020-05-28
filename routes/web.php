@@ -48,4 +48,8 @@ Route::get('/demandes/{id}/show', 'DemandesController@show')->name('demandes.sho
 Route::get('/demandes/{id}/delete', 'DemandesController@delete')->name('demandes.delete');
 
 
+Route::get('/apihome', 'ApiHomeController@index')->name('apihome.index');
+
+
+
 

@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('apiauth')->group(function(){  
     Route::get('entreprisesapi', 'ApiEntreprisesController@index')->name('api.entreprises.index');
-    //Route::get('entreprisesapi/{api_token}', 'ApiEntreprisesController@indexnav')->name('api.entreprises.indexnav');
     Route::post('entreprisesapi/store', 'ApiEntreprisesController@store')->name('api.entreprises.store.index');
+    //Route::get('entreprisesapi/{api_token}', 'ApiEntreprisesController@indexnav')->name('api.entreprises.indexnav');
     //Route::get('/entreprises', 'EntreprisesController@index')->name('entreprises.index');
 });
 
