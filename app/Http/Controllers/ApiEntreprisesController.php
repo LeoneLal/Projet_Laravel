@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Entreprise;
 use App\User;
+use App\contact;
+use App\Demande;
 
 class ApiEntreprisesController extends Controller
 {
@@ -56,8 +58,14 @@ class ApiEntreprisesController extends Controller
     {
 
         $user = User::where('id', $userId)->first();
+        $nb_ent = Entreprise::where('user_id', $user->id)->count();
+        $nb_contact = contact::where('user_id', $user->id)->count();
+        $nb_demandes = Demande::where('user_id', $user->id)->count();
         return response()->json([
-            'user' => $user
+            'user' => $user,
+            'Nombre d entreprise'=> $nb_ent,
+            'Nombre de contact' => $nb_contact,
+            'Nombre de demandes'=> $nb_demandes,
         ]);
       
     }
