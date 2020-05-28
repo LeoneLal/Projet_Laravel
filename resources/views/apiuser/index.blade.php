@@ -46,7 +46,7 @@
 <p>Exemple: Pour l'entreprise Devenir Chiant </p>
 <h4>http://localhost/alterbiere/public/api/entreprisesapi/9/detail</h4>
 <p>Il ne vous reste plus qu'à rajouter votre token et on obtient cette url : </p>
-<h4>http://localhost/alterbiere/public/api/entreprisesapi/9/detail?api_token=93be95d9-6c03-4014-afc7-2eca5c323834</h4>
+<h4>http://localhost/alterbiere/public/api/entreprisesapi/9/detail?api_token={{$save_token}}</h4>
 
     <br>
     <br>
@@ -62,7 +62,7 @@
       
     </ul>
     <p>Affiche votre utilisateur: </p>
-    <h4>http://localhost/alterbiere/public/api/entreprisesapi/{{$id_user}}/user?api_token=93be95d9-6c03-4014-afc7-2eca5c323834</h4>
+    <h4>http://localhost/alterbiere/public/api/entreprisesapi/{{$id_user}}/user?api_token={{$save_token}}</h4>
 
 
     <br>
