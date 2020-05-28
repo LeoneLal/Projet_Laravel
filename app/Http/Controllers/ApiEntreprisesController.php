@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Entreprise;
+use App\User;
 
 class ApiEntreprisesController extends Controller
 {
@@ -39,5 +40,42 @@ class ApiEntreprisesController extends Controller
         ]);
         
     }
+
+
+    public function detail($entrepriseId)
+    {
+
+        $entreprise = Entreprise::where('id', $entrepriseId)->with('contact')->first();
+        return response()->json([
+            'entreprise' => $entreprise
+        ]);
+      
+    }
+
+    public function user($userId)
+    {
+
+        $user = User::where('id', $userId)->first();
+        return response()->json([
+            'user' => $user
+        ]);
+      
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
