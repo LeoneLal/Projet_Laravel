@@ -71,7 +71,6 @@ class HomeController extends Controller
 
             
         }
-       dd($badge);
         return view('home', compact('nb_ent', 'nb_contact', 'nb_demandes', 'tab_contact', 'tab_entreprise', 'tab_demande'));
     }
     
