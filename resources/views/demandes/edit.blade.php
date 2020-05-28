@@ -94,8 +94,9 @@
                     <div class="form-group">
                         <label>Entreprise contactée : </label>
                         <input type="text" disabled="disabled" value="{{ $entreprise->nom }}"/>
+                        <input id="entreprise_id" type="hidden" name="entreprise" value="{{ $entreprise->id }}">
                     </div>
-                    <input type="submit">
+                    <input type="submit" />
                 </div>
             </div>
         </div>
