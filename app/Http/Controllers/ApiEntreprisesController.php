@@ -3,38 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Entreprise;
-use App\Contact;
-use App\User;
 
 class ApiEntreprisesController extends Controller
 {
-    //Envoie la page d'accueil en récupérant toutes les entreprises présentes en BDD
-    public function index(){
+    public function index()
+    {
         $entreprises = Entreprise::all();
+        # SELECT * FROM bidules
         return response()->json([
-        'entreprises' => $entreprises
+            'entreprises' => $entreprises
         ]);
     }
-
-
-    public function indexnav($api_token){
-   
-        $entreprises = Entreprise::all();
-        return response()->json([
-        'entreprises' => $entreprises
-        ]);
-    }
-
-
-
-
-
-
-
-
-
-
 
     public function store(Request $request)
     {

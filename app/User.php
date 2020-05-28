@@ -21,7 +21,7 @@ class User extends Authenticatable
         'password',
         'api_token',
     ];
-
+    
     /**
      * The attributes that should be hidden for arrays.
      *

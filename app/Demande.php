@@ -10,7 +10,8 @@ class Demande extends Model
 
     protected $fillable=[
         'id', 
-        'user_id',
+        'type', 
+        'emploi', 
         'envoi_mail', 
         'reception_mail', 
         'envoie_appel', 
@@ -18,8 +19,15 @@ class Demande extends Model
         'date_rendez_vous',
         'resultat',
         'entreprise',
+        'user_id',
         'created_at'
     ];
-  
+    
+    public function Entreprise()
+    {
+        # la relation inverse se déclare grace a la méthode "hasMany", qui ne prend cette fois en paramètre, que le nom du model "A"
+        return $this->hasMany(Entreprise::class);
+    }
+
     public $timestamps = false;
 }
