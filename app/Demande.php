@@ -20,13 +20,6 @@ class Demande extends Model
         'entreprise',
         'created_at'
     ];
-    public function demandes_user()
-    {
-        # la relation inverse se déclare grace a la méthode "hasMany", qui ne prend cette fois en paramètre, que le nom du model "A"
-        return $this->hasMany(users::class);
-    }
-    
-
-
+  
     public $timestamps = false;
 }
