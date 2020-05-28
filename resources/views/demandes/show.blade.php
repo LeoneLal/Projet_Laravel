@@ -5,6 +5,7 @@
 	<title>Affichage d'une catégorie</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <style>
     .content {
         flex: 1;
@@ -71,6 +72,7 @@
         <div class="statut">
             <h4>Statut rendez-vous :</h4>
             <p>{{$demande->resultat}}</p>
+            <p>{{$demande->id}}</p>
         </div>
     @else
         <p>la demande n'existe pas</p>
