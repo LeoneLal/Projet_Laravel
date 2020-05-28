@@ -86,6 +86,7 @@
                     <a href="{{ route('entreprises.index') }}">Vos entreprises</a>
                     <a href="{{ route('contact.index') }}">Vos contacts</a>
                     <a href="{{ route('demandes.index') }}">Vos demandes</a>
+                    <a href="{{ route('apihome.index') }}" title="Home API">Home API</a>
                 </div>
             </div>
         </div>

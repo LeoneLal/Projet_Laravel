@@ -1,10 +1,9 @@
 <?php
-
-use Illuminate\Database\Seeder;
-
 use App\User;
-use App\Entreprise;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
+use App\Entreprise;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,6 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+
         $user = User::create([
             'name' => "Léone",
             'email' => "leone@gmail.com",

@@ -37,7 +37,7 @@
                   name="envoi_mail"
                   value="1"
                 />
-                <label>Envoi d'un mail : </label>
+                <label>Envoi d'un mail</label>
               </div>
               <div class="form-check">
                 <input
@@ -45,7 +45,7 @@
                   class="form-check-input"
                   name="reception_mail"
                 />
-                <label>Réception d'un mail : </label>
+                <label>Réception d'un mail</label>
               </div>
               <div class="form-check">
                 <input
@@ -53,7 +53,7 @@
                   class="form-check-input"
                   name="envoie_appel"
                 />
-                <label>Appel sortant : </label>
+                <label>Appel sortant</label>
               </div>
               <div class="form-check">
                 <input
@@ -61,7 +61,7 @@
                   class="form-check-input"
                   name="reception_appel"
                 />
-                <label>Appel entrant : </label>
+                <label>Appel entrant</label>
               </div>
               <div class="form-group">
                 <div class="form-group">
@@ -72,7 +72,6 @@
                     type="date"
                     name="date_rendez_vous"
                   />
-                  
                 </div>
                 <label for="resultat">Résultat de la demande : </label>
                 <input

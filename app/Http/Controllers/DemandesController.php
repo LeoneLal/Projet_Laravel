@@ -35,16 +35,6 @@ class DemandesController extends Controller
     //Fonction envoie en BDD
     public function store(Request $request)
     {
-        
-        $validatedData = $request->validate([
-            'type' => 'required',
-            'emploi' => 'required',
-            'date_rendez_vous' => 'required|date',
-            'resultat' => 'required',
-            'entreprise' => 'required',
-        ]); 
-
-
         $demande = new Demande();
         $demande->type = $request->get('type');
         $demande->emploi = $request->get('emploi');
@@ -88,21 +78,46 @@ class DemandesController extends Controller
     public function edit($demandeId)
     {
         $demande = Demande::where('id', $demandeId)->first();
-        return view('demandes.edit', compact('demande'));
+        $entreprise = Entreprise::where('id', $demande->entreprise)->first();
+        return view('demandes.edit', compact('demande', 'entreprise'));
     }
 
 
     //Fonction update BDD
     public function update(Request $request, $demandeId)
     {
-        $entreprise = Demande::where('id', $demandeId)->first();
-        $entreprise->nom = $request->get('nom');
-        $entreprise->adresse = $request->get('adresse');
-        $entreprise->telephone = $request->get('telephone');
-        $entreprise->mail = $request->get('mail');
-        $entreprise->save();
-
-        return redirect()->route('demandes.index');
+        $demande = Demande::where('id', $demandeId)->first();
+        $demande->type = $request->get('type');
+        $demande->emploi = $request->get('emploi');
+        if(!is_null($request->get('envoi_mail'))) {
+            $demande->envoi_mail = True;
+        } else {
+            $demande->envoi_mail = False;
+        }
+        if(!is_null($request->get('reception_mail'))) {
+            $demande->reception_mail = True;
+        } else {
+            $demande->reception_mail = False;
+        }
+        if(!is_null($request->get('envoie_appel'))) {
+            $demande->envoie_appel = True;
+        } else {
+            $demande->envoie_appel = False;
+        }
+        if(!is_null($request->get('reception_appel'))) {
+            $demande->reception_appel = True;
+        } else {
+            $demande->reception_appel = False;
+        }
+        if(!is_null($request->get('date_rendez_vous'))) {
+            $demande->date_rendez_vous = $request->get('date_rendez_vous');
+        }
+        $demande->resultat = $request->get('resultat');
+        $demande->entreprise = $request->get('entreprise');
+        //$demande->created_at = $request->get('created_at');
+        $demande->user_id = \Auth::user()->id;
+        $demande->save();
+        return redirect()->route('demandes.show', $demande->id);
     }
 
 
