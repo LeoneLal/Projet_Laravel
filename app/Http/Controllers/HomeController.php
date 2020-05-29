@@ -69,6 +69,27 @@ class HomeController extends Controller
                 $tab_demande['number_left'] = $value[0] - $nb_demandes + 5;
             }
 
+            if ($nb_contact < 5) {
+                $tab_contact['image'] = 1;
+                $tab_contact['badge'] = "Bon début !";
+                $tab_contact['number_left'] = 5 - $nb_contact;
+            }
+
+            if ($nb_ent < 5) {
+                $tab_entreprise['image'] = 1;
+                $tab_entreprise['badge'] = "Bon début !";
+                $tab_entreprise['number_left'] = 5 - $nb_ent;
+                $badge = $value[1];
+            }
+
+            if ($nb_demandes < 5) {
+                $tab_demande['image'] = 1;
+                $tab_demande['badge'] = "Bon début !";
+                $tab_demande['number_left'] = 5 - $nb_demandes;
+            }
+
+
+
             
         }
         return view('home', compact('nb_ent', 'nb_contact', 'nb_demandes', 'tab_contact', 'tab_entreprise', 'tab_demande'));
