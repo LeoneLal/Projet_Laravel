@@ -18,7 +18,6 @@ class ApiAuth
     {
 
         $user = User::where('api_token', $request->api_token)->first();
-        //dd($request);
         if(!is_null($user)){
             return $next($request);
         }
