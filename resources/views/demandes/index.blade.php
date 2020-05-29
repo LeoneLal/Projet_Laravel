@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +11,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <h1 style="text-align : center">Index des demandes</h1>
+                <h1>Index des demandes</h1>
                 <a href="{{ route('demandes.create') }}" title="Ajouter une catégorie"><p style="font-size : 20px; text-align : center">Ajouter une demande</p></a>
                 <ul class="list-group">
                     @foreach($demandes as $demande)
@@ -17,9 +20,9 @@
                         @endif
                     @endforeach
                 </ul>
-                <a href="{{ route('home') }}" title="Reour accueil"><p>Retour accueil</p></a>
             </div>
         </div>
     </div>
 </body>
 </html>
+@endsection

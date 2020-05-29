@@ -11,7 +11,8 @@ class ContactController extends Controller
     //Envoie la vue index de Contact avec tout les contacts
     public function index(){
         $contact =  Contact::all();
-        return view('contact.index', compact('contact'));
+        $entreprise = Entreprise::where('id', $contact->entreprise_id);
+        return view('contact.index', compact('contact', 'entreprise'));
     }
 
     //Envoie la vue create de contact
