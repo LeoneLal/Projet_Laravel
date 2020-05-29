@@ -12,7 +12,9 @@
                 <a href="{{ route('demandes.create') }}" title="Ajouter une catégorie"><p style="font-size : 20px; text-align : center">Ajouter une demande</p></a>
                 <ul class="list-group">
                     @foreach($demandes as $demande)
+                        @if($demande->user_id == \Auth::user()->id)
                         <li class="list-group-item"><a href="{{ route('demandes.show', $demande->id) }}" >{{ $demande->type }} : {{ $demande->emploi }}</a></li>
+                        @endif
                     @endforeach
                 </ul>
                 <a href="{{ route('home') }}" title="Reour accueil"><p>Retour accueil</p></a>
