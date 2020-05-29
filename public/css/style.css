@@ -17,8 +17,10 @@
     border: rgb(182, 180, 180) solid 1px;
     margin-bottom: 10px;
     padding: 5px;
-    width: 80%;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .acces {
@@ -36,5 +38,3 @@
 }
 
 /*////////////Show demande////////////////*/
-
-
