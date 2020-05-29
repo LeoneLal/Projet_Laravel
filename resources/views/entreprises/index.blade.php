@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,27 +8,23 @@
 	<title>Index des entreprises</title>
 </head>
 <body>
-    <h1>Index des entreprises</h1>
-
-    <a href="{{ route('entreprises.create') }}" title="Ajouter une catégorie">Ajouter une entreprise</a>
-
-    
-
-    <ul>
-        @foreach($entreprises as $entreprise)
-        
-            @if($entreprise->user_id == \Auth::user()->id)
-            <li>
-                <a href="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->nom }}">{{ $entreprise->nom }}</a>
-            </li>
-            @endif
-            
-        @endforeach
-    </ul>
-    
-    
-
-    <a href="{{ route('home') }}">Retour a l'accueil</a>
-    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1>Index des entreprises</h1>
+                <a href="{{ route('entreprises.create') }}" title="Ajouter une catégorie"><p style="font-size : 20px; text-align : center">Ajouter une entreprise</p></a>
+                <ul class="list-group">
+                    @foreach($entreprises as $entreprise)
+                        @if($entreprise->user_id == \Auth::user()->id)
+                        <li class="list-group-item">
+                            <a href="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->nom }}">{{ $entreprise->nom }}</a>
+                        </li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+@endsection

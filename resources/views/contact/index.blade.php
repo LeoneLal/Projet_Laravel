@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,20 +8,25 @@
 	<title>Affichage des contacts</title>
 </head>
 <body>
-    <h1>Affichage des contacts</h1>
-    <br>
-    @foreach($contact as $one)
-        @if($one->user_id == \Auth::user()->id)  
-            <ul>
-            <!--Il faut trouver comment afficher le nom de l'entreprise-->
-                <li>{{ $one->nom }} {{ $one->prenom }}</li>
-                <li>{{ $one->poste }}</li>
-                <li>{{ $one->mail }}</li>
-                <li>{{ $one->numero }}</li>
-            </ul>
-        @endif
-    @endforeach
-    <br><br>
-    <a href="{{ route('home') }}" title="accueil">Retour à la page d'accueil</a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1>Affichage des contacts</h1>
+                <br>
+                @foreach($contact as $one)
+                    @if($one->user_id == \Auth::user()->id)  
+                        <ul class="cadre">
+                        <!--Il faut trouver comment afficher le nom de l'entreprise-->
+                            <li>{{ $one->nom }} {{ $one->prenom }}</li>
+                            <li>{{ $one->poste }} chez {{ $entreprise->nom }}</li>
+                            <li>{{ $one->mail }}</li>
+                            <li>{{ $one->numero }}</li>
+                        </ul>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+@endsection
