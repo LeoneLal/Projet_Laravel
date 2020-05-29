@@ -4,8 +4,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            
-           
             <div class="col-md-10">
                 <h2>Tableau des badges</h2>
                 <div class="cadre">

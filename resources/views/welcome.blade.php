@@ -84,7 +84,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    AlterBiere
+                    AlterBière
                 </div>
                 <div class="images">
                     <img src="images/search.png" alt="CV" id="CV"/>
