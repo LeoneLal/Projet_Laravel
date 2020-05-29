@@ -47,7 +47,7 @@
                     @endif
                 </div>
                 <div class="cadre">
-                    @if ($nb_ent == 0 && $nb_contact == 0 && $nb_demandes == 0)
+                    @if ($nb_ent == 0 || $nb_contact == 0 || $nb_demandes == 0)
                         <p>Entrer une entreprise, un contact et une demande pour obtenir ce badge</p>
                     @elseif($nb_ent > 0 && $nb_contact > 0 && $nb_demandes > 0)
                         <img src="images/badge1.png" alt="Biere" id="badge" />

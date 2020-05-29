@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Entreprise;
 use App\contact;
 use App\Demande;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -79,7 +80,7 @@ class HomeController extends Controller
                 $tab_entreprise['image'] = 1;
                 $tab_entreprise['badge'] = "Bon début !";
                 $tab_entreprise['number_left'] = 5 - $nb_ent;
-                $badge = $value[1];
+                $badge = "Bon début !";
             }
 
             if ($nb_demandes < 5) {
@@ -92,6 +93,10 @@ class HomeController extends Controller
 
             
         }
+
+        $user = User::where('id', $user->id)->first();
+        $user->badge = $badge;
+        $user->save(); 
         return view('home', compact('nb_ent', 'nb_contact', 'nb_demandes', 'tab_contact', 'tab_entreprise', 'tab_demande'));
     }
     
