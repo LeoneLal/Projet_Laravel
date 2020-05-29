@@ -55,22 +55,22 @@
                         <img src="images/badge1.png" alt="Biere" id="badge" />
                         <p><b>Badge : Bon début !</b></p>
                         <p>Il faut au moins 5 entreprises, contacts et demandes pour débloquer ce badge</p>
-                        <p>Tes contacts : {{$nb_contact}}  et {{ 5 - $nb_ent}} entreprises et {{ 5 - $nb_demandes}} demandes avant le prochain badge</p>
+                        <p>Tu possèdes {{$nb_contact}}  contacts, {{$nb_ent}} entreprises et {{$nb_demandes}} demandes.</p>
 
                     @elseif($nb_ent >= 5 && $nb_contact >= 5 && $nb_demandes >= 5)
                         <img src="images/badge2.png" alt="Biere" id="badge" />
                         <p><b>Badge : On progresse !</b></p>
-                        <p>Encore {{ 10 - $nb_contact}} contacts et {{ 10 - $nb_ent}} entreprises et {{ 10 - $nb_demandes}} demandes avant le prochain badge</p>
+                        <p>Tu possèdes {{$nb_contact}} contacts, {{$nb_ent}} entreprises et {{$nb_demandes}} demandes.</p>
 
                     @elseif($nb_ent >= 10 && $nb_contact >= 10 && $nb_demandes >= 10)
                         <img src="images/badge3.png" alt="Biere" id="badge" />
                         <p><b>Badge : Ca devient serieux ! </b></p>
-                        <p>Encore {{ 15 - $nb_contact}} contacts et {{ 15 - $nb_ent}} entreprises et {{ 15 - $nb_demandes}} demandes avant le prochain badge</p>
+                        <p>Tu possèdes {{$nb_contact}} contacts, {{$nb_ent}} entreprises et {{$nb_demandes}} demandes.</p>
 
                     @elseif($nb_ent >=15 && $nb_contact >=15 && $nb_demandes >=15)
                         <img src="images/badge4.png" alt="Biere" id="badge" />
                         <p><b>Badge : Les yeux fermés !</b></p>
-                        <p>Encore {{ 20 - $nb_contact}} contacts et {{ 20 - $nb_ent}} entreprises et {{ 20 - $nb_demandes}} demandes avant le prochain badge</p>
+                        <p>Tu possèdes {{$nb_contact}} contacts, {{$nb_ent}} entreprises et {{$nb_demandes}} demandes.</p>
 
                     @elseif($nb_ent >=20 && $nb_contact >=20 && $nb_demandes >=20)
                         <img src="images/badge5.png" alt="Biere" id="badge" />
