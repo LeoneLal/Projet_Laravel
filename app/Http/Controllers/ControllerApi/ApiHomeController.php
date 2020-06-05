@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\ControllerApi;
 use App\User;
 use App\Entreprise;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ApiHomeController extends Controller
 {

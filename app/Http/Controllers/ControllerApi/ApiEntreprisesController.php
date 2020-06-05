@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\ControllerApi;
 
 use Illuminate\Http\Request;
 
@@ -8,6 +8,7 @@ use App\Entreprise;
 use App\User;
 use App\contact;
 use App\Demande;
+use App\Http\Controllers\Controller;
 
 class ApiEntreprisesController extends Controller
 {
@@ -19,9 +20,6 @@ class ApiEntreprisesController extends Controller
             'entreprises' => $entreprises
         ]);
     }
-
-   
-
 
     public function detail($entrepriseId)
     {
