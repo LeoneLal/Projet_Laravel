@@ -5,7 +5,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<title>Affichage d'une catégorie</title>
+	<title>Affichage d'une demande</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -39,11 +39,9 @@
     </style>
 </head>
 <body>
-    <h1>Affichage d'une catégorie</h1>
-
     <div class="content">
     @if(!is_null($demande))
-    <h2>{{ $demande->type }} : {{ $demande->emploi }}</h2>
+    <h1>{{ $demande->type }} : {{ $demande->emploi }}</h1>
         <div class="statut">
             <h4>Statut mails :</h4>
             @if($demande->envoi_mail == 1 && $demande->reception_mail == 1)
@@ -77,7 +75,7 @@
             <p>ID : {{$demande->id}}</p>
         </div>
     @else
-        <p>la demande n'existe pas</p>
+        <p>La demande n'existe pas</p>
     @endif
     </div>
     <div class="links">

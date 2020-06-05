@@ -31,6 +31,7 @@
 
 h1 {
     text-align: center;
+    height: 75px;
 }
 
 /*////////////Création de demande////////////////*/
@@ -49,4 +50,10 @@ ul {
 
 h4 {
     color: crimson;
+}
+
+.btn-grp {
+    display: flex;
+    justify-content:space-around;
+    height: 75px;
 }

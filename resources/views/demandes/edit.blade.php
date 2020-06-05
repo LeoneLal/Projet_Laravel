@@ -5,7 +5,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<title>Modification d'une demande</title>
+    <link href="{{asset ('css/style.css') }}" rel="stylesheet" type="text/css">
+    <title>Modification d'une demande</title>
 </head>
 <body>
     <form method="POST" action="{{ route('demandes.update', $demande->id) }}">
@@ -99,7 +100,7 @@
                         <input type="text" disabled="disabled" value="{{ $entreprise->nom }}"/>
                         <input id="entreprise_id" type="hidden" name="entreprise" value="{{ $entreprise->id }}">
                     </div>
-                    <input type="submit" />
+                    <input type="submit" class="btn btn-info">
                 </div>
             </div>
         </div>
