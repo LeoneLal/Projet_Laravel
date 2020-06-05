@@ -1,21 +1,24 @@
 **AlterBière**
 
-Alterbière est un projet de site web où l'on répertorie des contacts d'entreprises et ou l'on peut suivre l'évolution de nos demandes chez es entreprises.
+Alterbière is a website project where we list company contacts and where we can follow the evolution of our requests from companies.
 
-## Pour commencer
-### Pré-requis
+## To begin
+### Pre-requisites
 
-- Laravel version 6 minimum
-- Le projet a été développé avec la base de données MySQL
+- Laravel version 6 minimum.
+- The project has been developped with MySQL database.
 
 ### Installation
-Il faut cloner le projet Git.
-Il faut ensuite configurer le .env de votre projet en précisant les accès à votre base de données. 
-Pour finir il faut faire un  ```composer install```  pour télécharger toutes les dépendances du projet.
+You have to clone the Git project.
+You must then configure the .env of your project by specifying the accesses to your database.
+
+Finally, you must do a  ```composer install```  to download all the dependencies of the project.
 
 ## Fabriqué avec
 
-Pour réaliser ce projet nous avons utilisé le framework PHP Laravel. 
+
+To carry out this project we used the Laravel PHP framework.
+We developped this project with Visual Studio Code.
 
 ## Auteurs
 
@@ -23,5 +26,5 @@ Pour réaliser ce projet nous avons utilisé le framework PHP Laravel.
 - **Auriane Labille**  _alias_  [@Fanghienne](https://github.com/Fanghienne)
 - **Sébastien Plottu**  _alias_  [@sebastienplottu](https://github.com/sebastienplottu)
 - **Léone Lalloué**  _alias_  [@LeoneLal](https://github.com/LeoneLal)
-- 
-Lisez la liste des  [contributeurs](https://github.com/LeoneLal/Projet_Laravel/graphs/contributors)  pour voir qui à aidé au projet !
+
+Read the list of [contributors] (https://github.com/LeoneLal/Projet_Laravel/graphs/contributors) to see who helped the project!
