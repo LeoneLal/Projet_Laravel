@@ -49,11 +49,3 @@ Route::get('/demandes/{id}/delete', 'DemandesController@delete')->name('demandes
 
 
 Route::get('/apihome', 'ApiHomeController@index')->name('apihome.index');
-
-
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

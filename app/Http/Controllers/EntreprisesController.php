@@ -30,7 +30,6 @@ class EntreprisesController extends Controller
         return redirect()->route('entreprises.index');
     }
 
-
     //Fonction envoie en BDD
     public function store(Request $request)
     {
