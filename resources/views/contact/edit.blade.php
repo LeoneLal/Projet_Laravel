@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Modification d'un contact</h1>
-
+    <!--Contact modification form-->
     <form method="POST" action="{{ route('contact.update', $contact->id) }}">
 
         @csrf

@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Création d'une entreprise</h1>
-
+    <!--Company creation form-->
     <form method="POST" action="{{ route('entreprises.store') }}">
 
         @csrf

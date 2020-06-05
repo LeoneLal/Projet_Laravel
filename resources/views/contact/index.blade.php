@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h1>Affichage des contacts</h1>
-                
+                <!--List of all user's contacts-->
                 @foreach($contact as $one)
                     @if($one->user_id == $user)
                     <div class="list-group">

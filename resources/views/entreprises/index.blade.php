@@ -14,6 +14,7 @@
                 <h1>Index des entreprises</h1>
                 <a href="{{ route('entreprises.create') }}" title="Ajouter une catégorie"><p style="font-size : 20px; text-align : center">Ajouter une entreprise</p></a>
                 <ul class="list-group">
+                    <!--List of all user's companies-->
                     @foreach($entreprises as $entreprise)
                         @if($entreprise->user_id == \Auth::user()->id)
                         <li class="list-group-item">

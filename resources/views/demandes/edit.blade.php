@@ -9,6 +9,7 @@
     <title>Modification d'une demande</title>
 </head>
 <body>
+    <!--Request modification form-->
     <form method="POST" action="{{ route('demandes.update', $demande->id) }}">
 
         @csrf

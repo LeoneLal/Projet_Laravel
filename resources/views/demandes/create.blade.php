@@ -13,6 +13,7 @@
         <div class="col-md-6">
           <h1>Création d'une demande</h1>
           <div class="form">
+          <!--Request creation form-->
             <form method="POST" action="{{ route('demandes.store') }}">
               @csrf
               <div class="form-group">

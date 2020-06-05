@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Création d'un contact</h1>
-
+    <!--Contact creation form-->
     <form method="POST" action="{{ route('contact.store') }}">
 
         @csrf

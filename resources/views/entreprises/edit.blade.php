@@ -13,7 +13,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h1>Modification d'une entreprise</h1>
-
+                <!--Company modification form-->
                 <form method="POST" action="{{ route('entreprises.update', $entreprise->id) }}">
 
                     @csrf
