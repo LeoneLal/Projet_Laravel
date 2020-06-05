@@ -44,8 +44,7 @@
                         <p>Encore {{ $tab_demande['number_left'] }} demandes avant le prochain badge</p>
                     @endif
                 </div>
-            </div>
-            <div class="cadre">
+                <div class="cadre">
                 @if ($nb_ent == 0 || $nb_contact == 0 || $nb_demandes == 0)
                     <p>Entrer une entreprise, un contact et une demande pour obtenir ce badge</p>
                 @elseif($nb_ent > 0 && $nb_contact > 0 && $nb_demandes > 0)
@@ -73,7 +72,8 @@
                     <img src="images/badge5.png" alt="Biere" id="badge" />
                     <p><b>Badge : Un vrai pro ! !</b></p>
                 @endif 
-            </div>
+            </div></div>
+            
         </div>
     </div>
 </div>
