@@ -58,7 +58,7 @@ Route::get('/demandes/{id}/show', 'DemandesController@show')->name('demandes.sho
 Route::get('/demandes/{id}/delete', 'DemandesController@delete')->name('demandes.delete');
 
 //This is the road to acces at the API 
-Route::get('/apihome', 'ApiHomeController@index')->name('apihome.index');
+Route::get('/apihome', 'ControllerApi\ApiHomeController@index')->name('apihome.index');
 
 
 

@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('apiauth')->group(function(){  
-    Route::get('entreprisesapi', 'ApiEntreprisesController@index')->name('api.entreprises.index');
-    Route::get('entreprisesapi/{id}/detail', 'ApiEntreprisesController@detail')->name('api.entreprises.detail');
-    Route::get('entreprisesapi/{id}/user', 'ApiEntreprisesController@user')->name('api.entreprises.user');
+    Route::get('entreprisesapi', 'ControllerApi\ApiEntreprisesController@index')->name('api.entreprises.index');
+    Route::get('entreprisesapi/{id}/detail', 'ConrtollerApi\ApiEntreprisesController@detail')->name('api.entreprises.detail');
+    Route::get('entreprisesapi/{id}/user', 'ControllerApi\ApiEntreprisesController@user')->name('api.entreprises.user');
 });
 
