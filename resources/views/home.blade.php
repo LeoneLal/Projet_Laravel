@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h2>Tableau des badges</h2>
+            <h1>Tableau des badges</h1>
             <!-- For each badge we get the number of elements linked to the badge and we display the data that coresponds. -->
             <div class="cadre">
                 @if($tab_entreprise['image'] != 0)

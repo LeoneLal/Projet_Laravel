@@ -98,10 +98,6 @@ class HomeController extends Controller
                 $tab_demande['badge'] = "Bon début !";
                 $tab_demande['number_left'] = 5 - $nb_demandes;
             }
-
-
-
-            
         }
 
         $user = User::where('id', $user->id)->first();

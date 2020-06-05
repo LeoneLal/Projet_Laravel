@@ -11,20 +11,20 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-            <h1>Affichage des contacts</h1>
-    <br>
-    @foreach($contact as $one)
-        @if($one->user_id == $user)
-            <ul>
-                <li>{{ $one->nom }} {{ $one->prenom }}</li>
-                <li>{{ $one->poste }} chez {{ $one->entreprise->nom }}</li>
-                <li>{{ $one->mail }}</li>
-                <li>{{ $one->numero }}</li>
-            </ul>
-        @endif
-    @endforeach
-    <br><br>
-    <a href="{{ route('home') }}" title="accueil">Retour à la page d'accueil</a>
+                <h1>Affichage des contacts</h1>
+                
+                @foreach($contact as $one)
+                    @if($one->user_id == $user)
+                    <div class="list-group">
+                        <ul class="list-group-item">
+                            <li>{{ $one->nom }} {{ $one->prenom }}</li>
+                            <li>{{ $one->poste }} chez {{ $one->entreprise->nom }}</li>
+                            <li>{{ $one->mail }}</li>
+                            <li>{{ $one->numero }}</li>
+                        </ul>
+                    </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
