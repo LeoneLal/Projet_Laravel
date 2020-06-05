@@ -5,14 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h2>Tableau des badges</h2>
+            <!-- For each badge we get the number of elements linked to the badge and we display the data that coresponds. -->
             <div class="cadre">
                 @if($tab_entreprise['image'] != 0)
                     <img src="images/badge{{ $tab_entreprise['image']}}.png" alt="Biere" id="badge" />
                     <p><b>Badge : {{ $tab_entreprise['badge']}}</b></p>
                 @endif
-
+                <!--Counter before the next badge -->  
                 @if($nb_ent == 0)
                     <p>Ajoutes une entreprise pour obtenir ce badge</p>
+                  
                 @else    
                     <p>Encore {{ $tab_entreprise['number_left'] }} entreprises avant le prochain badge</p>
                 @endif
@@ -43,14 +45,15 @@
                         <p>Encore {{ $tab_demande['number_left'] }} demandes avant le prochain badge</p>
                     @endif
                 </div>
-                <div class="cadre">
-                    @if ($nb_ent == 0 || $nb_contact == 0 || $nb_demandes == 0)
-                        <p>Entrer une entreprise, un contact et une demande pour obtenir ce badge</p>
-                    @elseif($nb_ent > 0 && $nb_contact > 0 && $nb_demandes > 0)
-                        <img src="images/badge1.png" alt="Biere" id="badge" />
-                        <p><b>Badge : Bon début !</b></p>
-                        <p>Il faut au moins 5 entreprises, contacts et demandes pour débloquer ce badge</p>
-                        <p>Tu possèdes {{$nb_contact}}  contacts, {{$nb_ent}} entreprises et {{$nb_demandes}} demandes.</p>
+            </div>
+            <div class="cadre">
+                @if ($nb_ent == 0 || $nb_contact == 0 || $nb_demandes == 0)
+                    <p>Entrer une entreprise, un contact et une demande pour obtenir ce badge</p>
+                @elseif($nb_ent > 0 && $nb_contact > 0 && $nb_demandes > 0)
+                    <img src="images/badge1.png" alt="Biere" id="badge" />
+                    <p><b>Badge : Bon début !</b></p>
+                    <p>Il faut au moins 5 entreprises, contacts et demandes pour débloquer ce badge</p>
+                    <p>Tu possèdes {{$nb_contact}}  contacts, {{$nb_ent}} entreprises et {{$nb_demandes}} demandes.</p>
 
                 @elseif($nb_ent >= 5 && $nb_contact >= 5 && $nb_demandes >= 5)
                     <img src="images/badge2.png" alt="Biere" id="badge" />

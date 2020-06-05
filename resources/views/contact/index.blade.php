@@ -16,7 +16,6 @@
     @foreach($contact as $one)
         @if($one->user_id == $user)
             <ul>
-            <!--Il faut trouver comment afficher le nom de l'entreprise-->
                 <li>{{ $one->nom }} {{ $one->prenom }}</li>
                 <li>{{ $one->poste }} chez {{ $one->entreprise->nom }}</li>
                 <li>{{ $one->mail }}</li>
