@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Entreprise extends Model
 {
+    public $timestamps = false;
+
     protected $table="entreprises";
 
     protected $fillable=[
@@ -17,17 +19,17 @@ class Entreprise extends Model
         'created_at'
     ];
 
-    public $timestamps = false;
+    
 
     public function contact()
     {
-        # la relation inverse se déclare grace a la méthode "hasMany", qui ne prend cette fois en paramètre, que le nom du model "A"
+      //Link between twoo models (Parent)
         return $this->hasMany(contact::class);
     }
 
     public function entreprise_user()
     {
-        # la relation inverse se déclare grace a la méthode "hasMany", qui ne prend cette fois en paramètre, que le nom du model "A"
+         //Link between twoo models (Child)
         return $this->belongsTo(users::class, "id" );
     }
 }
