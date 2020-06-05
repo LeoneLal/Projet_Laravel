@@ -14,13 +14,13 @@ You must then configure the .env of your project by specifying the accesses to y
 
 Finally, you must do a  ```composer install```  to download all the dependencies of the project.
 
-## Fabriqué avec
+## Made with
 
 
 To carry out this project we used the Laravel PHP framework.
 We developped this project with Visual Studio Code.
 
-## Auteurs
+## Authors
 
 
 - **Auriane Labille**  _alias_  [@Fanghienne](https://github.com/Fanghienne)
