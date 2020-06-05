@@ -8,19 +8,19 @@ use App\Entreprise;
 
 class ContactController extends Controller
 {
-    //Envoie la vue index de Contact avec tout les contacts
+    //Send the index contact view with all contacts
     public function index(){
         $user = \Auth::user()->id;
         $contact =  Contact::with('entreprise')->get();
         return view('contact.index', compact('contact', 'user'));
     }
 
-    //Envoie la vue create de contact
+    //Send the contact creation view to DB
     public function create($entrepriseId){
         return view('contact.create', compact('entrepriseId'));
     }
 
-    //Fonction envoie en BDD d'un contact
+    //Send contact to DB
     public function store(Request $request){
 
         $validatedData = $request->validate([
@@ -46,19 +46,20 @@ class ContactController extends Controller
         return redirect()->route('entreprises.show', $contact->entreprise_id);
     }
 
-    //Envoie la vue edit contact
+    //Send the contact edit view
     public function edit($contactId){
         $contact = Contact::where('id', $contactId)->first();
         return view('contact.edit', compact('contact'));
     }
-    //Supprime un contact de l'entrerpise
+
+    //Delete a contact from the company
     public function delete($contactId){
         $contact = Contact::where('id', $contactId)->first();
         $contact->delete();  
         return redirect()->route('entreprises.show', $contact->entreprise_id);
     }
 
-    //Fonction update BDD
+    //Update the DB
     public function update(Request $request, $contactId)
     {
         $validatedData = $request->validate([

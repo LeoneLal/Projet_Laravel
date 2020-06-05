@@ -23,7 +23,7 @@ class Contact extends Model
     public function entreprise()
     {
         # BelongsTo doit prendre en premier paramètre le nom du model A, puis en second paramètre, le nom du champs dans le modèle courant lié avec le model A grâce à sa foreign key
-        return $this->belongsTo(entreprise::class, "entreprise_id");
+        return $this->belongsTo(Entreprise::class, "entreprise_id");
     }
 
     public function contact_user()
