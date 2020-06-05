@@ -29,6 +29,10 @@
     font-size: 20px;
 }
 
+h1 {
+    text-align: center;
+}
+
 /*////////////Création de demande////////////////*/
 .form {
     display: flex;
@@ -40,4 +44,9 @@
 ul {
     list-style: none;
 }
-/*////////////Show demande////////////////*/
+
+/*////////////API index////////////////*/
+
+h4 {
+    color: crimson;
+}

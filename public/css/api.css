@@ -4,28 +4,3 @@ body {
     padding: 0 20px 20px 20px;
     border: 5px solid black;
 }
-
-h1 {
-    margin: 0;
-    padding: 20px 0;
-    color: #00539f;
-    text-shadow: 3px 3px 1px black;
-}
-h3 {
-}
-h4 {
-    color: crimson;
-}
-
-.bouton a {
-    display: block;
-    width: 150px;
-    line-height: 50px;
-    text-align: center;
-    background-color: darkblue;
-    color: white;
-    text-decoration: none;
-}
-.bouton a:hover {
-    background-color: blue;
-}

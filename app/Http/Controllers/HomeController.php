@@ -39,7 +39,6 @@ class HomeController extends Controller
 
     public function index()
     {   
-
         $user = \Auth::user();
         $nb_ent = Entreprise::where('user_id', $user->id)->count();
         $nb_contact = contact::where('user_id', $user->id)->count();
@@ -88,10 +87,6 @@ class HomeController extends Controller
                 $tab_demande['badge'] = "Bon début !";
                 $tab_demande['number_left'] = 5 - $nb_demandes;
             }
-
-
-
-            
         }
 
         $user = User::where('id', $user->id)->first();

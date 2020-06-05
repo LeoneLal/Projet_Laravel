@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h2>Tableau des badges</h2>
+            <h1>Tableau des badges</h1>
             <div class="cadre">
                 @if($tab_entreprise['image'] != 0)
                     <img src="images/badge{{ $tab_entreprise['image']}}.png" alt="Biere" id="badge" />
