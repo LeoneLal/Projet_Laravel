@@ -8,19 +8,19 @@ use App\Contact;
 
 class EntreprisesController extends Controller
 {
-    //Envoie la page d'accueil en récupérant toutes les entreprises présentes en BDD
+    //Send the home page by recovering all the companies present in DB
     public function index(){
         $entreprises = Entreprise::all();
         return view('entreprises.index', compact('entreprises'));
     }
 
-    //Envoie la vue create entreprise
+    //Send the company create view
     public function create()
     {
         return view('entreprises.create');
     }
 
-    // Supprime une entreprise
+    //Delete a company
     public function delete($entrepriseId)
     {
         $contact = Contact::where('entreprise_id', $entrepriseId);
@@ -30,10 +30,10 @@ class EntreprisesController extends Controller
         return redirect()->route('entreprises.index');
     }
 
-    //Fonction envoie en BDD
+    //Send to DB
     public function store(Request $request)
     {
-        // Vérification du contenu
+        //Content check
         $validatedData = $request->validate([
             'nom' => 'required',
             'adresse' => 'required',
@@ -51,14 +51,14 @@ class EntreprisesController extends Controller
         return redirect()->route('entreprises.index');
     }
 
-    //Envoie la vue edit entreprise
+    //Send the company edit view
     public function edit($entrepriseId)
     {
         $entreprise = Entreprise::where('id', $entrepriseId)->first();
         return view('entreprises.edit', compact('entreprise'));
     }
 
-    //Fonction update BDD
+    //Update DB
     public function update(Request $request, $entrepriseId)
     {
 
@@ -80,7 +80,7 @@ class EntreprisesController extends Controller
         return redirect()->route('entreprises.index');
     }
 
-    //Affichage des éléments pour une entreprise
+    //Viewing the details of a company
     public function show($entrepriseId)
     {
         $entreprise = Entreprise::where('id', $entrepriseId)->with('contact')->first();
