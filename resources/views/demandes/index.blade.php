@@ -13,6 +13,7 @@
             <div class="col-md-6">
                 <h1>Index des demandes</h1>
                 <a href="{{ route('demandes.create') }}" title="Ajouter une catégorie"><p style="font-size : 20px; text-align : center">Ajouter une demande</p></a>
+                <!--List of all user's requests-->
                 <ul class="list-group">
                     @foreach($demandes as $demande)
                         @if($demande->user_id == \Auth::user()->id)

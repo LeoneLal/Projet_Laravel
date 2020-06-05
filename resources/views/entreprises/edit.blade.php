@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Modification d'une entreprise</h1>
-
+    <!--Company modification form-->
     <form method="POST" action="{{ route('entreprises.update', $entreprise->id) }}">
 
         @csrf
