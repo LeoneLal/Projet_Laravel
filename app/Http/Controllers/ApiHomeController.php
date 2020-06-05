@@ -10,7 +10,8 @@ class ApiHomeController extends Controller
     
     public function index()
     {
-
+       // We send some informations at the view to display them. 
+       //The id_user, his token and some company.
         $usersapi=\Auth::user();
         $save_token= $usersapi->api_token;
         $id_user =\Auth::user()->id;

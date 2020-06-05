@@ -13,8 +13,8 @@ class ApiEntreprisesController extends Controller
 {
     public function index()
     {
+        //This will show every company
         $entreprises = Entreprise::all();
-        # SELECT * FROM bidules
         return response()->json([
             'entreprises' => $entreprises
         ]);
@@ -25,7 +25,7 @@ class ApiEntreprisesController extends Controller
 
     public function detail($entrepriseId)
     {
-
+        //This will show detail of an company.
         $entreprise = Entreprise::where('id', $entrepriseId)->with('contact')->first();
         return response()->json([
             'entreprise' => $entreprise
@@ -35,7 +35,7 @@ class ApiEntreprisesController extends Controller
 
     public function user($userId)
     {
-
+        //This will show a lot of user informations and some statistics.
         $user = User::where('id', $userId)->first();
         $nb_ent = Entreprise::where('user_id', $user->id)->count();
         $nb_contact = contact::where('user_id', $user->id)->count();
