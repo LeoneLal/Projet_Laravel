@@ -27,7 +27,9 @@ class HomeController extends Controller
      */
 
 
-    
+    /**
+     * Breakpoints for number of badges
+     */
     public $bps = [
         [0, ""],
         [1, "Bon début !"],
@@ -39,16 +41,25 @@ class HomeController extends Controller
 
     public function index()
     {   
+        /**
+         * Get number of each elements linked to the connected user
+         */
         $user = \Auth::user();
         $nb_ent = Entreprise::where('user_id', $user->id)->count();
         $nb_contact = contact::where('user_id', $user->id)->count();
         $nb_demandes = Demande::where('user_id', $user->id)->count();
 
+        /**
+         * Tabs for data of each elements
+         */
         $tab_contact = ['image' => '','badge' => '','number_left' => ''];
         $tab_entreprise = ['image' => '','badge' => '','number_left' => ''];
         $tab_demande = ['image' => '','badge' => '','number_left' => ''];
 
         $badge = "";
+        /**
+         * For each badge we give the value that correspond.
+         */
         foreach ($this->bps as $key => $value) {
             if ($nb_contact >= $value[0]) {
                 $tab_contact['image'] = $key;

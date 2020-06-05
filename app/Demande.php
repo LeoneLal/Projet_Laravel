@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Demande extends Model
 {
+
+    public $timestamps = false;
+
     protected $table="demandes";
 
     protected $fillable=[
@@ -25,9 +28,9 @@ class Demande extends Model
     
     public function Entreprise()
     {
-        # la relation inverse se déclare grace a la méthode "hasMany", qui ne prend cette fois en paramètre, que le nom du model "A"
+        //Link between twoo models (Parent)
         return $this->hasMany(Entreprise::class);
     }
 
-    public $timestamps = false;
+   
 }

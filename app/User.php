@@ -43,17 +43,17 @@ class User extends Authenticatable
 
     public function user_contact()
     {
-        # BelongsTo doit prendre en premier paramètre le nom du model A, puis en second paramètre, le nom du champs dans le modèle courant lié avec le model A grâce à sa foreign key
+         //Link between twoo models (Parent)
         return $this->hasMany(contact::class);
     }
     public function user_entreprise()
     {
-        # BelongsTo doit prendre en premier paramètre le nom du model A, puis en second paramètre, le nom du champs dans le modèle courant lié avec le model A grâce à sa foreign key
+        //Link between twoo models (Parent)
         return $this->hasMany(entreprise::class);
     }
     public function user_demandes()
     {
-        # BelongsTo doit prendre en premier paramètre le nom du model A, puis en second paramètre, le nom du champs dans le modèle courant lié avec le model A grâce à sa foreign key
+         //Link between twoo models (Parent)
         return $this->hasMany(demandes::class);
     }
 
