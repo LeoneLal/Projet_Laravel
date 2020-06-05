@@ -43,17 +43,17 @@ class User extends Authenticatable
 
     public function user_contact()
     {
-         //Link between twoo models (Parent)
+        //Link between twoo models (parent)
         return $this->hasMany(contact::class);
     }
     public function user_entreprise()
     {
-        //Link between twoo models (Parent)
+        //Link between twoo models (parent)
         return $this->hasMany(entreprise::class);
     }
     public function user_demandes()
     {
-         //Link between twoo models (Parent)
+        //Link between twoo models (parent)
         return $this->hasMany(demandes::class);
     }
 

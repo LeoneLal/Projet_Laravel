@@ -24,13 +24,13 @@ class Contact extends Model
 
     public function entreprise()
     {
-       //Link between twoo models (Child)
+        //Link between twoo models (child)
         return $this->belongsTo(Entreprise::class, "entreprise_id");
     }
 
     public function contact_user()
     {
-      //Link between twoo models (Child)
+        //Link between two models (child)
         return $this->belongsTo(users::class, "id");
     }
 }

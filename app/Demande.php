@@ -28,7 +28,7 @@ class Demande extends Model
     
     public function Entreprise()
     {
-        //Link between twoo models (Parent)
+        //Link between twoo models (parent)
         return $this->hasMany(Entreprise::class);
     }
 
