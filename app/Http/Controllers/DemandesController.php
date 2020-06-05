@@ -8,63 +8,61 @@ use App\Entreprise;
 
 class DemandesController extends Controller
 {
-    //Envoie la page d'accueil en récupérant toutes les entreprises présentes en BDD
+    //Send the home page by recovering all the demands present in DB
     public function index(){
         $demandes = Demande::all();
         return view('demandes.index', compact('demandes'));
     }
 
-
-    //Envoie la vue create entreprise
+    //Send the demand create view
     public function create()
     {
         $entreprises = Entreprise::all();
         return view('demandes.create', compact('entreprises'));
     }
 
-
     public function delete($demandeId)
     {
         $demande = Demande::where('id', $demandeId)->first();
-        // suppression, au choix !
         $demande->delete();
         return redirect()->route('demandes.index');
     }
 
-
-    //Fonction envoie en BDD
+    //Send to DB
     public function store(Request $request)
     {
         $demande = new Demande();
         $demande->type = $request->get('type');
         $demande->emploi = $request->get('emploi');
-        //dd($request);
+
         if(!is_null($request->get('envoi_mail'))) {
             $demande->envoi_mail = True;
         } else {
             $demande->envoi_mail = False;
         }
-        //$demande->reception_mail = $request->get('reception_mail');
+
         if(!is_null($request->get('reception_mail'))) {
             $demande->reception_mail = True;
         } else {
             $demande->reception_mail = False;
         }
-        //$demande->envoie_appel = $request->get('envoie_appel');
+
         if(!is_null($request->get('envoie_appel'))) {
             $demande->envoie_appel = True;
         } else {
             $demande->envoie_appel = False;
         }
-        //$demande->reception_appel = $request->get('reception_appel');
+
         if(!is_null($request->get('reception_appel'))) {
             $demande->reception_appel = True;
         } else {
             $demande->reception_appel = False;
         }
+
         if(!is_null($request->get('date_rendez_vous'))) {
             $demande->date_rendez_vous = $request->get('date_rendez_vous');
         }
+
         $demande->resultat = $request->get('resultat');
         $demande->entreprise = $request->get('entreprise');
         //$demande->created_at = $request->get('created_at');
@@ -73,8 +71,7 @@ class DemandesController extends Controller
         return redirect()->route('demandes.index');
     }
 
-
-    //Envoie la vue edit entreprise
+    //Send the demand edit view
     public function edit($demandeId)
     {
         $demande = Demande::where('id', $demandeId)->first();
@@ -82,8 +79,7 @@ class DemandesController extends Controller
         return view('demandes.edit', compact('demande', 'entreprise'));
     }
 
-
-    //Fonction update BDD
+    //Update DB
     public function update(Request $request, $demandeId)
     {
         $demande = Demande::where('id', $demandeId)->first();
@@ -120,8 +116,7 @@ class DemandesController extends Controller
         return redirect()->route('demandes.show', $demande->id);
     }
 
-
-    //Affichage des détails d'une demande
+    //Viewing the details of a demand
     public function show($demandeId)
     {
         $demande = Demande::where('id', $demandeId)->first();
