@@ -71,7 +71,6 @@
             @endif
         </div>
 
-
         <div class="statut">
             <h4>Statut rendez-vous :</h4>
             <p>{{$demande->resultat}}</p>
@@ -84,7 +83,6 @@
     <div class="links">
         <a href="{{ route('demandes.edit', $demande->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier la demande</button></a>
         <a href="{{ route('demandes.delete', $demande->id) }}" title="Supprimer la demande"><button type="button" class="btn btn-danger">Supprimer la demande</button></a>
-        <a href="{{ route('demandes.index') }}">Retour a l'accueil</a>
     </div>
 </body>
 </html>

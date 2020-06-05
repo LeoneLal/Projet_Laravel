@@ -30,7 +30,6 @@
                 @else    
                     <p>Encore {{ $tab_contact['number_left'] }} contacts avant le prochain badge</p>
                 @endif
-
             </div>
             <div class="cadre">
                 @if($tab_demande['image'] != 0)

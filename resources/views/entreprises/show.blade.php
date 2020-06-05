@@ -10,8 +10,6 @@
 <body>
     <h1>Affichage d'une catégorie</h1>
 
-    <a href="{{ route('entreprises.index') }}">Retour</a>
-    <br>
     <p>
     @if(!is_null($entreprise))
         {{$entreprise->nom}}
