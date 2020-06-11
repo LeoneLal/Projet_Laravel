@@ -22,7 +22,7 @@ class Contact extends Model
     ];
     
 
-    public function entreprise()
+    public function Company()
     {
         //Link between twoo models (child)
         return $this->belongsTo(Entreprise::class, "entreprise_id");
