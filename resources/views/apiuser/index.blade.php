@@ -13,10 +13,8 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <h1>Index API</h1>
-                
-                <h2>Votre Token ID</h2>
                 <!-- Use to recover and show the user api_token  -->
-                <p>{{$save_token}}</p>
+                <p>Votre Token ID : {{$save_token}}</p>
                 
                 <h2>Accès à l'API</h2>
                 <p>Pour accéder à l'API vous allez devoir accéder à une url via Postman en ajoutant votre api_token ci-dessus</p>
@@ -31,8 +29,7 @@
                     <ul class="list-group">
                     @foreach($entreprises as $entreprise)
                         <li class="list-group-item">
-                            <p>Nom de l'entreprise : {{ $entreprise->nom }}</p>
-                            <p>ID : {{$entreprise->id}}</p>
+                            <p>Nom de l'entreprise : {{ $entreprise->nom }} (ID : {{$entreprise->id}})</p>
                         </li>
                     @endforeach
                     </ul>
@@ -47,9 +44,10 @@
                 <h4>http://localhost/alterbiere/public/api/entreprisesapi/9/detail?api_token={{$save_token}}</h4>
                 <p>URL pour avoir le détail de votre utilisateur : </p>
                 <p>Votre utilisateur</p>
-                <ul><!--User ID  -->
+                <ul>
+                    <!--User ID  -->
                     <li>
-                        <p> Votre ID : {{$id_user}}</p>
+                        <p>Votre ID : {{$id_user}}</p>
                     </li>    
                 </ul>
                 <!--Link to show informations of actual user  -->
