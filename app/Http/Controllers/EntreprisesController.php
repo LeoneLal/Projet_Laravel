@@ -11,7 +11,6 @@ class EntreprisesController extends Controller
 
 
 
-    // Je vous aime pas -_-
     //Send the home page by recovering all the companies present in DB
     public function index(){
         $entreprises = Entreprise::all();
