@@ -23,7 +23,7 @@ class CompaniesController extends Controller
     //Delete a company
     public function delete($companyId)
     {
-        $contact = Contact::where('company_id', $companyId);
+        $contact = Contact::where('entreprise_id', $companyId);
         $contact->delete();
         $company = Company::where('id', $companyId)->first();
         $company->delete();

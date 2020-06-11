@@ -45,17 +45,17 @@ Route::get('/contact/{id}/create', 'ContactController@create')->name('contact.cr
 Route::put('/contact/{id}/update', 'ContactController@update')->name('contact.update');
 Route::get('/contact/{id}/edit', 'ContactController@edit')->name('contact.edit');
 Route::get('/contact/{id}/show', 'ContactController@show')->name('contact.show');
-Route::get('contact/{id}/delete', 'ContactController@delete')->name('contact.delete');
+Route::get('/contact/{id}/delete', 'ContactController@delete')->name('contact.delete');
 
 //Road to access at request.
 // You can access on request on the navbar and then add a new request.
-Route::get('/demandes', 'DemandesController@index')->name('demandes.index');
-Route::post('/demandes/store', 'DemandesController@store')->name('demandes.store');
-Route::get('/demandes/create', 'DemandesController@create')->name('demandes.create');
-Route::put('/demandes/{id}/update', 'DemandesController@update')->name('demandes.update');
-Route::get('/demandes/{id}/edit', 'DemandesController@edit')->name('demandes.edit');
-Route::get('/demandes/{id}/show', 'DemandesController@show')->name('demandes.show');
-Route::get('/demandes/{id}/delete', 'DemandesController@delete')->name('demandes.delete');
+Route::get('/request', 'RequestController@index')->name('request.index');
+Route::post('/request/store', 'RequestController@store')->name('request.store');
+Route::get('/request/create', 'RequestController@create')->name('request.create');
+Route::put('/request/{id}/update', 'RequestController@update')->name('request.update');
+Route::get('/request/{id}/edit', 'RequestController@edit')->name('request.edit');
+Route::get('/request/{id}/show', 'RequestController@show')->name('request.show');
+Route::get('/request/{id}/delete', 'RequestController@delete')->name('request.delete');
 
 //This is the road to acces at the API 
 Route::get('/apihome', 'ControllerApi\ApiHomeController@index')->name('apihome.index');
