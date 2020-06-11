@@ -12,13 +12,13 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h1>Index des entreprises</h1>
-                <a href="{{ route('entreprises.create') }}" title="Ajouter une catégorie"><p style="font-size : 20px; text-align : center">Ajouter une entreprise</p></a>
+                <a href="{{ route('companies.create') }}" title="Ajouter une catégorie"><p style="font-size : 20px; text-align : center">Ajouter une entreprise</p></a>
                 <ul class="list-group">
                     <!--List of all user's companies-->
-                    @foreach($entreprises as $entreprise)
-                        @if($entreprise->user_id == \Auth::user()->id)
+                    @foreach($companies as $company)
+                        @if($company->user_id == \Auth::user()->id)
                         <li class="list-group-item">
-                            <a href="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->nom }}">{{ $entreprise->nom }}</a>
+                            <a href="{{ route('companies.show', $company->id) }}" title="{{ $company->nom }}">{{ $company->nom }}</a>
                         </li>
                         @endif
                     @endforeach

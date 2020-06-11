@@ -12,20 +12,20 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <h1>{{$entreprise->nom}}</h1>
+                <h1>{{$company->nom}}</h1>
                 <div class="cadre">
-                    @if(!is_null($entreprise))
-                        <p>{{$entreprise->adresse}}</p>
-                        <p>{{$entreprise->telephone}}</p>
-                        <p>{{$entreprise->mail}}</p>
+                    @if(!is_null($company))
+                        <p>{{$company->adresse}}</p>
+                        <p>{{$company->telephone}}</p>
+                        <p>{{$company->mail}}</p>
                     @else
                         <p>L'entreprise n'existe pas</p>
                     @endif
                 </div>
                 <div class="btn-grp">
-                    <a href="{{ route('entreprises.edit', $entreprise->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier l'entreprise</button></a>
-                    <a href="{{ route('entreprises.delete', $entreprise->id) }}" title="Supprimer l'entreprise"><button type="button" class="btn btn-danger">Supprimer l'entreprise</button></a>
-                    <a href="{{ route('contact.create', $entreprise->id) }}" title="Ajouter un contact"><button type="button" class="btn btn-success">Ajouter un contact</button></a>
+                    <a href="{{ route('companies.edit', $company->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier l'entreprise</button></a>
+                    <a href="{{ route('companies.delete', $company->id) }}" title="Supprimer l'entreprise"><button type="button" class="btn btn-danger">Supprimer l'entreprise</button></a>
+                    <a href="{{ route('contact.create', $company->id) }}" title="Ajouter un contact"><button type="button" class="btn btn-success">Ajouter un contact</button></a>
                 </div>
                 <hr>
                 <h1>Contacts</h1>

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Entreprise extends Model
+class Company extends Model
 {
     public $timestamps = false;
 
@@ -21,7 +21,7 @@ class Entreprise extends Model
 
     
 
-    public function contact()
+    public function Contact()
     {
         //Link between twoo models (parent)
         return $this->hasMany(contact::class);

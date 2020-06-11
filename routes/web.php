@@ -29,13 +29,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route to access at company.
 //You can access index and then take an company.
-Route::get('/entreprises', 'EntreprisesController@index')->name('entreprises.index');
-Route::post('/entreprises/store', 'EntreprisesController@store')->name('entreprises.store');
-Route::get('/entreprises/create', 'EntreprisesController@create')->name('entreprises.create');
-Route::put('/entreprises/{id}/update', 'EntreprisesController@update')->name('entreprises.update');
-Route::get('/entreprises/{id}/edit', 'EntreprisesController@edit')->name('entreprises.edit');
-Route::get('/entreprises/{id}/show', 'EntreprisesController@show')->name('entreprises.show');
-Route::get('/entreprises/{id}/delete', 'EntreprisesController@delete')->name('entreprises.delete');
+Route::get('/companies', 'CompaniesController@index')->name('companies.index');
+Route::post('/companies/store', 'CompaniesController@store')->name('companies.store');
+Route::get('/companies/create', 'CompaniesController@create')->name('companies.create');
+Route::put('/companies/{id}/update', 'CompaniesController@update')->name('companies.update');
+Route::get('/companies/{id}/edit', 'CompaniesController@edit')->name('companies.edit');
+Route::get('/companies/{id}/show', 'CompaniesController@show')->name('companies.show');
+Route::get('/companies/{id}/delete', 'CompaniesController@delete')->name('companies.delete');
 
 //Road to access at contact.
 //Contacts are related to enterprise, but you can see all the contact on the navbar
