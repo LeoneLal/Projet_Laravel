@@ -9,7 +9,8 @@ use App\Entreprise;
 class DemandesController extends Controller
 {
     //Send the home page by recovering all the demands present in DB
-    public function index(){
+    public function index()
+    {
         $demandes = Demande::all();
         return view('demandes.index', compact('demandes'));
     }
@@ -34,7 +35,6 @@ class DemandesController extends Controller
         $demande = new Demande();
         $demande->type = $request->get('type');
         $demande->emploi = $request->get('emploi');
-
         $booleans = ['envoi_mail', 'reception_mail', 'envoie_appel', 'reception_appel'];
 
         foreach($booleans as $boolean){
@@ -78,7 +78,7 @@ class DemandesController extends Controller
                 $demande->$boolean = False;
             }
         }
-        
+
         if(!is_null($request->get('date_rendez_vous'))) {
             $demande->date_rendez_vous = $request->get('date_rendez_vous');
         }
