@@ -5,7 +5,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<title>Création d'une demande</title>
+	  <link href="{{asset ('css/style.css') }}" rel="stylesheet" type="text/css">
+    <title>Création d'une demande</title>
 </head>
 <body>
 <div class="container">
@@ -89,9 +90,7 @@
                 <label>Entreprise contactée</label>
                 <select class="form-control" name="entreprise">
                   @foreach($entreprises as $entreprise)
-                  <option value="{{ $entreprise->id }}"
-                    >{{ $entreprise->nom }}</option
-                  >
+                  <option value="{{ $entreprise->id }}">{{ $entreprise->nom }}</option>
                   @endforeach
                 </select>
               </div>
