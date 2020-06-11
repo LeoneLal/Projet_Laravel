@@ -15,12 +15,13 @@
                 <h1>Index API</h1>
                 
                 <h2>Votre Token ID</h2>
-                <!-- Permet de récupérer le token de l'utilisateur  -->
+                <!-- Use to recover and show the user api_token  -->
                 <p>{{$save_token}}</p>
                 
                 <h2>Accès à l'API</h2>
                 <p>Pour accéder à l'API vous allez devoir accéder à une url via Postman en ajoutant votre api_token ci-dessus</p>
                 <p>Avec une requête GET, cela vous donnera un .JSON</p>
+                <!--Some links to show all company  -->
                 <p>URL pour avoir toutes les entreprises : </p>
                 <h4>http://localhost/alterbiere/public/api/entreprisesapi</h4>
                 <p>Cela devrait donner sur postman quelque chose de similaire :</p>
@@ -37,6 +38,7 @@
                     </ul>
                 </div>
                 <p>Choissisez l'entreprise que vous voulez en utilisant son ID</p>
+                <!--Some links to show detail of a company  -->
                 <p>URL : </p>
                 <h4>http://localhost/alterbiere/public/api/entreprisesapi/id/detail</h4>
                 <p>Exemple : Pour l'entreprise Devenir Chiant </p>
@@ -45,11 +47,12 @@
                 <h4>http://localhost/alterbiere/public/api/entreprisesapi/9/detail?api_token={{$save_token}}</h4>
                 <p>URL pour avoir le détail de votre utilisateur : </p>
                 <p>Votre utilisateur</p>
-                <ul>
+                <ul><!--User ID  -->
                     <li>
                         <p> Votre ID : {{$id_user}}</p>
                     </li>    
                 </ul>
+                <!--Link to show informations of actual user  -->
                 <p>Affiche votre utilisateur : </p>
                 <h4>http://localhost/alterbiere/public/api/entreprisesapi/{{$id_user}}/user?api_token={{$save_token}}</h4>
             </div>

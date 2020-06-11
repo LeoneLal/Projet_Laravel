@@ -28,7 +28,7 @@ class DemandesController extends Controller
         return redirect()->route('demandes.index');
     }
 
-    //Send to DB
+    //Send to database
     public function store(Request $request)
     {
         $demande = new Demande();
@@ -74,12 +74,11 @@ class DemandesController extends Controller
     //Send the demand edit view
     public function edit($demandeId)
     {
-        $demande = Demande::where('id', $demandeId)->first();
-        $entreprise = Entreprise::where('id', $demande->entreprise)->first();
-        return view('demandes.edit', compact('demande', 'entreprise'));
+        $demande = Demande::where('id', $demandeId)->with('Company')->first();
+        return view('demandes.edit', compact('demande'));
     }
 
-    //Update DB
+    //Update database
     public function update(Request $request, $demandeId)
     {
         $demande = Demande::where('id', $demandeId)->first();
@@ -116,7 +115,7 @@ class DemandesController extends Controller
         return redirect()->route('demandes.show', $demande->id);
     }
 
-    //Viewing the details of a demand
+    //View of the details of a demand
     public function show($demandeId)
     {
         $demande = Demande::where('id', $demandeId)->first();

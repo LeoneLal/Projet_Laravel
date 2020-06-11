@@ -29,7 +29,7 @@
                 </div>
                 <hr>
                 <h1>Contacts</h1>
-                <!-- Afficher les différents contact -->
+                <!-- Show different contacts -->
                 <p>Les contacts liés à l'entreprise apparaitront ici !</p>
 
                 @if(!is_null($entreprise->contact))
