@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+//Route to show some informations with the good link, available on the page API.
 Route::middleware('apiauth')->group(function(){  
     Route::get('entreprisesapi', 'ControllerApi\ApiEntreprisesController@index')->name('api.entreprises.index');
     Route::get('entreprisesapi/{id}/detail', 'ConrtollerApi\ApiEntreprisesController@detail')->name('api.entreprises.detail');
