@@ -97,8 +97,8 @@
                     </div>
                     <div class="form-group">
                         <label>Entreprise contactée : </label>
-                        <input type="text" disabled="disabled" value="{{ $entreprise->nom }}"/>
-                        <input id="entreprise_id" type="hidden" name="entreprise" value="{{ $entreprise->id }}">
+                        <input type="text" disabled="disabled" value="{{ $demande->Company->nom }}"/>
+                        <input id="entreprise_id" type="hidden" name="entreprise" value="{{ $demande->Company->id }}">
                     </div>
                     <input type="submit" />
                 </div>
