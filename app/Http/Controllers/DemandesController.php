@@ -35,34 +35,19 @@ class DemandesController extends Controller
         $demande->type = $request->get('type');
         $demande->emploi = $request->get('emploi');
 
-        if(!is_null($request->get('envoi_mail'))) {
-            $demande->envoi_mail = True;
-        } else {
-            $demande->envoi_mail = False;
-        }
+        $booleans = ['envoi_mail', 'reception_mail', 'envoie_appel', 'reception_appel'];
 
-        if(!is_null($request->get('reception_mail'))) {
-            $demande->reception_mail = True;
-        } else {
-            $demande->reception_mail = False;
+        foreach($booleans as $boolean){
+            if(!is_null($request->get($boolean))) {
+                $demande->$boolean = True;
+            } else {
+                $demande->$boolean = False;
+            }
         }
-
-        if(!is_null($request->get('envoie_appel'))) {
-            $demande->envoie_appel = True;
-        } else {
-            $demande->envoie_appel = False;
-        }
-
-        if(!is_null($request->get('reception_appel'))) {
-            $demande->reception_appel = True;
-        } else {
-            $demande->reception_appel = False;
-        }
-
         if(!is_null($request->get('date_rendez_vous'))) {
             $demande->date_rendez_vous = $request->get('date_rendez_vous');
         }
-
+        
         $demande->resultat = $request->get('resultat');
         $demande->entreprise = $request->get('entreprise');
         //$demande->created_at = $request->get('created_at');
@@ -84,26 +69,16 @@ class DemandesController extends Controller
         $demande = Demande::where('id', $demandeId)->first();
         $demande->type = $request->get('type');
         $demande->emploi = $request->get('emploi');
-        if(!is_null($request->get('envoi_mail'))) {
-            $demande->envoi_mail = True;
-        } else {
-            $demande->envoi_mail = False;
+        $booleans = ['envoi_mail', 'reception_mail', 'envoie_appel', 'reception_appel'];
+
+        foreach($booleans as $boolean){
+            if(!is_null($request->get($boolean))) {
+                $demande->$boolean = True;
+            } else {
+                $demande->$boolean = False;
+            }
         }
-        if(!is_null($request->get('reception_mail'))) {
-            $demande->reception_mail = True;
-        } else {
-            $demande->reception_mail = False;
-        }
-        if(!is_null($request->get('envoie_appel'))) {
-            $demande->envoie_appel = True;
-        } else {
-            $demande->envoie_appel = False;
-        }
-        if(!is_null($request->get('reception_appel'))) {
-            $demande->reception_appel = True;
-        } else {
-            $demande->reception_appel = False;
-        }
+        
         if(!is_null($request->get('date_rendez_vous'))) {
             $demande->date_rendez_vous = $request->get('date_rendez_vous');
         }
