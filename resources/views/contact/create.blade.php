@@ -20,41 +20,41 @@
 
                     <div class="form-group">
                         <label for="nom">Nom du contact</label><br>
-                        <input id="nom" type="text" class="form-control" name="nom">
-                        @error('nom')
+                        <input id="nom" type="text" class="form-control" name="surname">
+                        @error('surname')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="nom">Prénom du contact</label><br>
-                        <input id="prenom" type="text" class="form-control" name="prenom">
-                        @error('prenom')
+                        <input id="prenom" type="text" class="form-control" name="name">
+                        @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="Poste">Poste du contact</label><br>
-                        <input id="Poste" type="text" class="form-control" name="poste">
-                        @error('poste')
+                        <input id="Poste" type="text" class="form-control" name="post">
+                        @error('post')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="mail">Mail du contact</label><br>
-                        <input id="mail" type="text" class="form-control" name="mail">
-                        @error('mail')
+                        <input id="mail" type="text" class="form-control" name="email">
+                        @error('email')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="telephone">Téléphone du contact</label><br>
-                        <input id="numero" type="text" class="form-control" name="numero">
-                        @error('numero')
+                        <input id="numero" type="text" class="form-control" name="number">
+                        @error('number')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
 
-                    <input type="hidden" name="entreprise_id" value="{{ $entrepriseId }}">
+                    <input type="hidden" name="company_id" value="{{ $companyId }}">
 
                     <input type="submit">
                 </form>
