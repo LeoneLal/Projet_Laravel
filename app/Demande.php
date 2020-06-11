@@ -26,10 +26,10 @@ class Demande extends Model
         'created_at'
     ];
     
-    public function Entreprise()
+    public function Company()
     {
-        //Link between twoo models (parent)
-        return $this->hasMany(Entreprise::class);
+        //Link between two models (parent)
+        return $this->belongsTo(Entreprise::class, "entreprise");
     }
 
    
