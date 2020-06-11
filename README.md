@@ -22,10 +22,10 @@ We developped this project with Visual Studio Code.
 
 
 ## Architecture
-Our project is divide in two parts , one is an operationel website and the seconds is a start of API using some links to ues.
+Our project is divide in two parts , one is an operationel website and the seconds is a start of API using some links to use.
 
 **Website :**
-The website is divide in trhee parts, where you can create,modify or delete.
+The website is divide in trhee parts, where you can create, modify or delete.
 - Company 
 - Contact
 - Request
