@@ -8,6 +8,9 @@ use App\Contact;
 
 class EntreprisesController extends Controller
 {
+
+
+
     //Send the home page by recovering all the companies present in DB
     public function index(){
         $entreprises = Entreprise::all();
