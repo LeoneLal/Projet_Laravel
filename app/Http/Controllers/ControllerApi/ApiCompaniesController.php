@@ -35,12 +35,12 @@ class ApiCompaniesController extends Controller
     {
         //This will show a lot of user informations and some statistics.
         $user = User::where('id', $userId)->first();
-        $nb_ent = Company::where('user_id', $user->id)->count();
+        $nb_comp = Company::where('user_id', $user->id)->count();
         $nb_contact = contact::where('user_id', $user->id)->count();
         $nb_demands = Demand::where('user_id', $user->id)->count();
         return response()->json([
             'user' => $user,
-            'Nombre d entreprise'=> $nb_ent,
+            'Nombre d entreprise'=> $nb_comp,
             'Nombre de contact' => $nb_contact,
             'Nombre de demandes'=> $nb_demands,
         ]);
