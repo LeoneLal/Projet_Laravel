@@ -16,7 +16,7 @@ class ApiHomeController extends Controller
         $usersapi=\Auth::user();
         $save_token= $usersapi->api_token;
         $id_user =\Auth::user()->id;
-        $companies = Entreprise::all();
+        $companies = Company::all();
 
         return view('apiuser.index', compact('usersapi','save_token','entreprises','id_user'));
        

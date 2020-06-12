@@ -46,8 +46,8 @@
                         </div>
                     </div> 
                     <div class="btn-grp">
-                        <a href="{{ route('demandes.edit', $demande->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier la demande</button></a>
-                        <a href="{{ route('demandes.delete', $demande->id) }}" title="Supprimer la demande"><button type="button" class="btn btn-danger">Supprimer la demande</button></a>
+                        <a href="{{ route('demands.edit', $demande->id) }}" title="Modification"><button type="button" class="btn btn-info">Modifier la demande</button></a>
+                        <a href="{{ route('demands.delete', $demande->id) }}" title="Supprimer la demande"><button type="button" class="btn btn-danger">Supprimer la demande</button></a>
                     </div>
                 @else
                     <p>La demande n'existe pas</p>

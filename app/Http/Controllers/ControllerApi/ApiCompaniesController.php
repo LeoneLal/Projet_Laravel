@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Company;
 use App\User;
-use App\contact;
+use App\Contact;
 use App\Demand;
 use App\Http\Controllers\Controller;
 

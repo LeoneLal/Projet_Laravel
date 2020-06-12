@@ -10,7 +10,7 @@
 </head>
 <body>
     <!--Request modification form-->
-    <form method="POST" action="{{ route('demandes.update', $demande->id) }}">
+    <form method="POST" action="{{ route('demands.update', $demande->id) }}">
 
         @csrf
         @method('PUT')
