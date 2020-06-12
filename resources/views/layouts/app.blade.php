@@ -37,13 +37,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('entreprises.index') }}">{{ __('Entreprises') }}</a>
+                            <a class="nav-link" href="{{ route('companies.index') }}">{{ __('Entreprises') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contact.index') }}">{{ __('Contacts') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('demandes.index') }}">{{ __('Demandes') }}</a>
+                            <a class="nav-link" href="{{ route('request.index') }}">{{ __('Demandes') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('apihome.index') }}">{{ __('API') }}</a>

@@ -18,7 +18,7 @@
                     <div class="list-group">
                         <ul class="list-group-item">
                             <li>{{ $one->nom }} {{ $one->prenom }}</li>
-                            <li>{{ $one->poste }} chez {{ $one->entreprise->nom }}</li>
+                            <li>{{ $one->poste }} chez {{ $one->company->nom }}</li>
                             <li>{{ $one->mail }}</li>
                             <li>{{ $one->numero }}</li>
                         </ul>

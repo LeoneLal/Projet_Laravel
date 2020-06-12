@@ -14,25 +14,25 @@
             <div class="col-md-6">
                 <h1>Création d'une entreprise</h1>
                 <!--Company creation form-->
-                <form method="POST" action="{{ route('entreprises.store') }}">
+                <form method="POST" action="{{ route('companies.store') }}">
 
                     @csrf
 
                     <div class="form-group">
-                    <label for="nom">Nom de l'entreprise à créer</label><br>
-                    <input id="nom" type="text" class="form-control" name="nom">
+                        <label for="nom">Nom de l'entreprise à créer</label><br>
+                        <input id="nom" type="text" class="form-control" name="nom">
                     </div>
                     <div class="form-group">
-                    <label for="adresse">Adresse de l'entreprise à créer</label><br>
-                    <input id="adresse" type="text" class="form-control" name="adresse">
+                        <label for="adresse">Adresse de l'entreprise à créer</label><br>
+                        <input id="adresse" type="text" class="form-control" name="adresse">
                     </div>
                     <div class="form-group">
-                    <label for="telephone">Téléphone de l'entreprise à créer</label><br>
-                    <input id="telephone" type="text" class="form-control" name="telephone">
+                        <label for="telephone">Téléphone de l'entreprise à créer</label><br>
+                        <input id="telephone" type="text" class="form-control" name="telephone">
                     </div>
                     <div class="form-group">
-                    <label for="mail">Mail de l'entreprise à créer</label><br>
-                    <input id="mail" type="text" class="form-control" name="mail">
+                        <label for="mail">Mail de l'entreprise à créer</label><br>
+                        <input id="mail" type="text" class="form-control" name="mail">
                     </div>
 
                     <input type="submit">

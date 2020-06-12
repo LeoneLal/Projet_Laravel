@@ -21,26 +21,26 @@
 
                     <div class="form-group">
                         <label for="nom">Nom du contact</label><br>
-                        <input id="nom" type="text" class="form-control" name="nom" value="{{$contact->nom}}">
+                        <input id="nom" type="text" class="form-control" name="surname" value="{{$contact->nom}}">
                     </div>
                     <div class="form-group">
                         <label for="prenom">Prenom du contact</label><br>
-                        <input id="prenom" type="text" class="form-control" name="prenom" value="{{$contact->prenom}}">
+                        <input id="prenom" type="text" class="form-control" name="name" value="{{$contact->prenom}}">
                     </div>
                     <div class="form-group">
                         <label for="poste">Poste du contact</label><br>
-                        <input id="poste" type="text" class="form-control" name="poste" value="{{$contact->poste}}">
+                        <input id="poste" type="text" class="form-control" name="post" value="{{$contact->poste}}">
                     </div>
                     <div class="form-group">
                         <label for="mail">Mail du contact</label><br>
-                        <input id="mail" type="text" class="form-control" name="mail" value="{{$contact->mail}}">
+                        <input id="mail" type="text" class="form-control" name="email" value="{{$contact->mail}}">
                     </div>
                     <div class="form-group">
                         <label for="telephone">Téléphone du contact</label><br>
-                        <input id="numero" type="text" class="form-control" name="numero" value="{{$contact->numero}}">
+                        <input id="numero" type="text" class="form-control" name="number" value="{{$contact->numero}}">
                     </div>
 
-                    <input id="entreprise_id" type="hidden" name="entreprise_id" value="{{$contact->entreprise_id}}">
+                    <input id="entreprise_id" type="hidden" name="company_id" value="{{$contact->entreprise_id}}">
 
                     <input type="submit" class="btn btn-info center-block">
                 </form>

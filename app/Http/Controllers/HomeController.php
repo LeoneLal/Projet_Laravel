@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Entreprise;
-use App\contact;
-use App\Demande;
+use App\Company;
+use App\Contact;
+use App\Demand;
 use App\User;
 
 class HomeController extends Controller
@@ -45,9 +45,9 @@ class HomeController extends Controller
          * Get number of each elements linked to the connected user
          */
         $user = \Auth::user();
-        $nb_ent = Entreprise::where('user_id', $user->id)->count();
-        $nb_contact = contact::where('user_id', $user->id)->count();
-        $nb_demandes = Demande::where('user_id', $user->id)->count();
+        $nb_ent = Company::where('user_id', $user->id)->count();
+        $nb_contact = Contact::where('user_id', $user->id)->count();
+        $nb_demandes = Demand::where('user_id', $user->id)->count();
 
         /**
          * Tabs for data of each elements

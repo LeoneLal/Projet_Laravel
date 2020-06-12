@@ -29,13 +29,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route to access at company.
 //You can access index and then take an company.
-Route::get('/entreprises', 'EntreprisesController@index')->name('entreprises.index');
-Route::post('/entreprises/store', 'EntreprisesController@store')->name('entreprises.store');
-Route::get('/entreprises/create', 'EntreprisesController@create')->name('entreprises.create');
-Route::put('/entreprises/{id}/update', 'EntreprisesController@update')->name('entreprises.update');
-Route::get('/entreprises/{id}/edit', 'EntreprisesController@edit')->name('entreprises.edit');
-Route::get('/entreprises/{id}/show', 'EntreprisesController@show')->name('entreprises.show');
-Route::get('/entreprises/{id}/delete', 'EntreprisesController@delete')->name('entreprises.delete');
+Route::get('/companies', 'CompaniesController@index')->name('companies.index');
+Route::post('/companies/store', 'CompaniesController@store')->name('companies.store');
+Route::get('/companies/create', 'CompaniesController@create')->name('companies.create');
+Route::put('/companies/{id}/update', 'CompaniesController@update')->name('companies.update');
+Route::get('/companies/{id}/edit', 'CompaniesController@edit')->name('companies.edit');
+Route::get('/companies/{id}/show', 'CompaniesController@show')->name('companies.show');
+Route::get('/companies/{id}/delete', 'CompaniesController@delete')->name('companies.delete');
 
 //Road to access at contact.
 //Contacts are related to enterprise, but you can see all the contact on the navbar
@@ -45,17 +45,17 @@ Route::get('/contact/{id}/create', 'ContactController@create')->name('contact.cr
 Route::put('/contact/{id}/update', 'ContactController@update')->name('contact.update');
 Route::get('/contact/{id}/edit', 'ContactController@edit')->name('contact.edit');
 Route::get('/contact/{id}/show', 'ContactController@show')->name('contact.show');
-Route::get('contact/{id}/delete', 'ContactController@delete')->name('contact.delete');
+Route::get('/contact/{id}/delete', 'ContactController@delete')->name('contact.delete');
 
 //Road to access at request.
 // You can access on request on the navbar and then add a new request.
-Route::get('/demandes', 'DemandesController@index')->name('demandes.index');
-Route::post('/demandes/store', 'DemandesController@store')->name('demandes.store');
-Route::get('/demandes/create', 'DemandesController@create')->name('demandes.create');
-Route::put('/demandes/{id}/update', 'DemandesController@update')->name('demandes.update');
-Route::get('/demandes/{id}/edit', 'DemandesController@edit')->name('demandes.edit');
-Route::get('/demandes/{id}/show', 'DemandesController@show')->name('demandes.show');
-Route::get('/demandes/{id}/delete', 'DemandesController@delete')->name('demandes.delete');
+Route::get('/request', 'DemandsController@index')->name('demands.index');
+Route::post('/request/store', 'DemandsController@store')->name('demands.store');
+Route::get('/request/create', 'DemandsController@create')->name('demands.create');
+Route::put('/request/{id}/update', 'DemandsController@update')->name('demands.update');
+Route::get('/request/{id}/edit', 'DemandsController@edit')->name('demands.edit');
+Route::get('/request/{id}/show', 'DemandsController@show')->name('demands.show');
+Route::get('/request/{id}/delete', 'DemandsController@delete')->name('demands.delete');
 
 //This is the road to acces at the API 
 Route::get('/apihome', 'ControllerApi\ApiHomeController@index')->name('apihome.index');
