@@ -32,8 +32,8 @@
                 <!-- Show different contacts -->
                 <p>Les contacts liés à l'entreprise apparaitront ici !</p>
 
-                @if(!is_null($entreprise->contact))
-                    @foreach($entreprise->contact as $contact)
+                @if(!is_null($company->contact))
+                    @foreach($company->contact as $contact)
                         <ul class="list-group-item">
                             <li>Nom - Prénom :
                                 {{ $contact->nom}}

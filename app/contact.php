@@ -20,7 +20,7 @@ class Contact extends Model
         'entreprise_id',
         'created_at'
     ];
-    
+     
 
     public function Company()
     {

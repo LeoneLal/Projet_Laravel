@@ -43,7 +43,7 @@ class ContactController extends Controller
         $contact->entreprise_id = $request->get('company_id');
         $contact->user_id = \Auth::user()->id;
         $contact->save();
-        return redirect()->route('entreprises.show', $contact->entreprise_id);
+        return redirect()->route('companies.show', $contact->entreprise_id);
     }
 
     //Send the contact edit view
@@ -56,7 +56,7 @@ class ContactController extends Controller
     public function delete($contactId){
         $contact = Contact::where('id', $contactId)->first();
         $contact->delete();  
-        return redirect()->route('entreprises.show', $contact->entreprise_id);
+        return redirect()->route('companies.show', $contact->entreprise_id);
     }
 
     //Update the DB
@@ -80,6 +80,6 @@ class ContactController extends Controller
         $contact->entreprise_id = $request->get('company_id');
         $contact->user_id = \Auth::user()->id;
         $contact->save(); 
-        return redirect()->route('entreprises.show', $contact->entreprise_id);
+        return redirect()->route('companies.show', $contact->entreprise_id);
     }
 }
