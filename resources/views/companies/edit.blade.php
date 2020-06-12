@@ -14,7 +14,7 @@
             <div class="col-md-6">
                 <h1>Modification d'une entreprise</h1>
                 <!--Company modification form-->
-                <form method="POST" action="{{ route('companies.update', $entreprise->id) }}">
+                <form method="POST" action="{{ route('companies.update', $company->id) }}">
 
                     @csrf
                     @method('PUT')

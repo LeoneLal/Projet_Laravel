@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Demande;
-use App\Entreprise;
+use App\Request;
+use App\Company;
 
 class DemandesController extends Controller
 {

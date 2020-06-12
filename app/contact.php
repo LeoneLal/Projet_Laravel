@@ -20,12 +20,12 @@ class Contact extends Model
         'entreprise_id',
         'created_at'
     ];
-    
+     
 
     public function Company()
     {
         //Link between twoo models (child)
-        return $this->belongsTo(Entreprise::class, "entreprise_id");
+        return $this->belongsTo(Company::class, "entreprise_id");
     }
 
     public function contact_user()
