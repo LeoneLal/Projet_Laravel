@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\ControllerApi;
 use App\User;
-use App\Entreprise;
+use App\Company;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +16,7 @@ class ApiHomeController extends Controller
         $usersapi=\Auth::user();
         $save_token= $usersapi->api_token;
         $id_user =\Auth::user()->id;
-        $entreprises = Entreprise::all();
+        $entreprises = Company::all();
 
         return view('apiuser.index', compact('usersapi','save_token','entreprises','id_user'));
        
