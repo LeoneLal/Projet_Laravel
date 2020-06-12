@@ -18,38 +18,38 @@ class DemandsController extends Controller
     //Send the demand create view
     public function create()
     {
-        $entreprises = Company::all();
-        return view('demands.create', compact('entreprises'));
+        $companies = Company::all();
+        return view('demands.create', compact('companies'));
     }
 
-    public function delete($demandeId)
+    public function delete($demandId)
     {
-        $demande = Demand::where('id', $demandeId)->first();
-        $demande->delete();
+        $demand = Demand::where('id', $demandId)->first();
+        $demand->delete();
         return redirect()->route('demands.index');
     }
 
     //Send to database
     public function store(Request $request)
     {
-        $demande = new Demand();
-        $demande->type = $request->get('type');
-        $demande->emploi = $request->get('emploi');
+        $demand = new Demand();
+        $demand->type = $request->get('type');
+        $demand->emploi = $request->get('emploi');
         $booleans = ['envoi_mail', 'reception_mail', 'envoie_appel', 'reception_appel'];
 
         foreach($booleans as $boolean){
             if(!is_null($request->get($boolean))) {
-                $demande->$boolean = True;
+                $demand->$boolean = True;
             } else {
-                $demande->$boolean = False;
+                $demand->$boolean = False;
             }
         }
         if(!is_null($request->get('date_rendez_vous'))) {
-            $demande->date_rendez_vous = $request->get('date_rendez_vous');
+            $demand->date_rendez_vous = $request->get('date_rendez_vous');
         }
         
-        $demande->resultat = $request->get('resultat');
-        $demande->entreprise = $request->get('entreprise');
+        $demand->resultat = $request->get('resultat');
+        $demand->entreprise = $request->get('entreprise');
         //$demande->created_at = $request->get('created_at');
         $demande->user_id = \Auth::user()->id;
         $demande->save();
@@ -57,43 +57,43 @@ class DemandsController extends Controller
     }
 
     //Send the demand edit view
-    public function edit($demandeId)
+    public function edit($demandId)
     {
-        $demande = Demand::where('id', $demandeId)->with('Company')->first();
-        return view('demands.edit', compact('demande'));
+        $demande = Demand::where('id', $demandId)->with('Company')->first();
+        return view('demands.edit', compact('demand'));
     }
 
     //Update database
-    public function update(Request $request, $demandeId)
+    public function update(Request $request, $demandId)
     {
-        $demande = Demand::where('id', $demandeId)->first();
-        $demande->type = $request->get('type');
-        $demande->emploi = $request->get('emploi');
+        $demand = Demand::where('id', $demandId)->first();
+        $demand->type = $request->get('type');
+        $demand->emploi = $request->get('emploi');
         $booleans = ['envoi_mail', 'reception_mail', 'envoie_appel', 'reception_appel'];
 
         foreach($booleans as $boolean){
             if(!is_null($request->get($boolean))) {
-                $demande->$boolean = True;
+                $demand->$boolean = True;
             } else {
-                $demande->$boolean = False;
+                $demand->$boolean = False;
             }
         }
 
         if(!is_null($request->get('date_rendez_vous'))) {
-            $demande->date_rendez_vous = $request->get('date_rendez_vous');
+            $demand->date_rendez_vous = $request->get('date_rendez_vous');
         }
-        $demande->resultat = $request->get('resultat');
-        $demande->entreprise = $request->get('entreprise');
+        $demand->resultat = $request->get('resultat');
+        $demand->entreprise = $request->get('entreprise');
         //$demande->created_at = $request->get('created_at');
-        $demande->user_id = \Auth::user()->id;
-        $demande->save();
-        return redirect()->route('demands.show', $demande->id);
+        $demand->user_id = \Auth::user()->id;
+        $demand->save();
+        return redirect()->route('demands.show', $demand->id);
     }
 
     //View of the details of a demand
-    public function show($demandeId)
+    public function show($demandId)
     {
-        $demande = Demand::where('id', $demandeId)->first();
-        return view('demands.show', compact('demande'));
+        $demande = Demand::where('id', $demandId)->first();
+        return view('demands.show', compact('demand'));
     }
 }

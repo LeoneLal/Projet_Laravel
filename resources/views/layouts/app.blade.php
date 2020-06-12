@@ -43,7 +43,7 @@
                             <a class="nav-link" href="{{ route('contact.index') }}">{{ __('Contacts') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('request.index') }}">{{ __('Demandes') }}</a>
+                            <a class="nav-link" href="{{ route('demands.index') }}">{{ __('Demandes') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('apihome.index') }}">{{ __('API') }}</a>

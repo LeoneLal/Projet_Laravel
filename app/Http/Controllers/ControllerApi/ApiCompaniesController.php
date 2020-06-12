@@ -4,29 +4,29 @@ namespace App\Http\Controllers\ControllerApi;
 
 use Illuminate\Http\Request;
 
-use App\Entreprise;
+use App\Company;
 use App\User;
 use App\contact;
-use App\Demande;
+use App\Demand;
 use App\Http\Controllers\Controller;
 
-class ApiEntreprisesController extends Controller
+class ApiCompaniesController extends Controller
 {
     public function index()
     {
         //This will show every company
-        $entreprises = Entreprise::all();
+        $companies = Company::all();
         return response()->json([
-            'entreprises' => $entreprises
+            'entreprises' => $companies
         ]);
     }
 
-    public function detail($entrepriseId)
+    public function detail($companyId)
     {
         //This will show detail of an company.
-        $entreprise = Entreprise::where('id', $entrepriseId)->with('contact')->first();
+        $company = Company::where('id', $companyId)->with('contact')->first();
         return response()->json([
-            'entreprise' => $entreprise
+            'entreprise' => $company
         ]);
       
     }
@@ -35,14 +35,14 @@ class ApiEntreprisesController extends Controller
     {
         //This will show a lot of user informations and some statistics.
         $user = User::where('id', $userId)->first();
-        $nb_ent = Entreprise::where('user_id', $user->id)->count();
+        $nb_ent = Company::where('user_id', $user->id)->count();
         $nb_contact = contact::where('user_id', $user->id)->count();
-        $nb_demandes = Demande::where('user_id', $user->id)->count();
+        $nb_demands = Demand::where('user_id', $user->id)->count();
         return response()->json([
             'user' => $user,
             'Nombre d entreprise'=> $nb_ent,
             'Nombre de contact' => $nb_contact,
-            'Nombre de demandes'=> $nb_demandes,
+            'Nombre de demandes'=> $nb_demands,
         ]);
       
     }
