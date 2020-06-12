@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Request extends Model
+class Demand extends Model
 {
 
     public $timestamps = false;
@@ -29,7 +29,7 @@ class Request extends Model
     public function Company()
     {
         //Link between two models (parent)
-        return $this->belongsTo(Entreprise::class, "entreprise");
+        return $this->belongsTo(Company::class, "entreprise");
     }
 
    
