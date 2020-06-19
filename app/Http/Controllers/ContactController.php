@@ -62,14 +62,6 @@ class ContactController extends Controller
     //Update the DB
     public function update(Request $request, $contactId)
     {
-        $validatedData = $request->validate([
-            'nom' => 'required',
-            'prenom' => 'required',
-            'poste' => 'date',
-            'mail' => 'required|email',
-            'numero' => 'required',
-        ]);
-
         $contact = Contact::where('id', $contactId)->first();
         $contact->nom = $request->get('nom');
         $contact->prenom = $request->get('prenom');
